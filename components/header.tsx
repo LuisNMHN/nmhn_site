@@ -17,6 +17,9 @@ export function Header() {
           <span className="text-lg sm:text-xl font-bold text-foreground">
             NMHN <span className="text-teal">Pay</span>
           </span>
+          <span className="ml-2 inline-flex items-center rounded-full border border-yellow-500/30 bg-yellow-500/10 px-2 py-0.5 text-[10px] font-medium text-yellow-600 dark:text-yellow-400">
+            BETA
+          </span>
         </Link>
 
         {/* Desktop Navigation */}

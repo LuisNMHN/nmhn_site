@@ -36,11 +36,17 @@ export default function HomePage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="grid gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20 max-w-7xl mx-auto">
               <div className="flex flex-col justify-center space-y-4 sm:space-y-6 lg:space-y-8 order-1">
+                <div className="inline-flex items-center rounded-full border border-yellow-500/30 bg-yellow-500/10 px-3 py-1 text-xs font-medium text-yellow-600 dark:text-yellow-400 mb-2 animate-text-reveal animation-delay-100">
+                  🚀 Versión Beta - Próximamente disponible
+                </div>
                 <h1 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl animate-text-reveal animation-delay-200">
                   Gestiona tus servicios y solicitudes de cobro desde una plataforma simple y profesional
                 </h1>
                 <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed text-pretty animate-text-reveal animation-delay-400">
-                  NMHN Pay ofrece herramientas digitales para que emprendedores, freelancers y consultores hondureños organicen su trabajo, envíen solicitudes de cobro y accedan a funciones premium de manera segura.
+                  NMHN Pay está en desarrollo. Próximamente ofreceremos herramientas digitales para que emprendedores, freelancers y consultores hondureños organicen su trabajo, envíen solicitudes de cobro y accedan a funciones premium de manera segura.
+                </p>
+                <p className="text-sm text-muted-foreground italic animate-text-reveal animation-delay-500">
+                  Desde Honduras para freelancers 2025 — versión beta
                 </p>
                 <div className="flex flex-col gap-3 sm:gap-4 sm:flex-row animate-slide-in-left animation-delay-600 pt-2">
                   <Button 
@@ -66,8 +72,13 @@ export default function HomePage() {
               </div>
 
               <div className="flex flex-col items-center justify-center gap-6 sm:gap-8 lg:gap-10 order-2 lg:order-2">
-                <CardPaymentsDemo />
-                <PaymentLinksDemo />
+                <div className="w-full max-w-md mx-auto rounded-xl border-2 border-dashed border-muted-foreground/30 bg-muted/20 p-8 sm:p-12 text-center">
+                  <div className="space-y-3">
+                    <div className="text-4xl">🚧</div>
+                    <h3 className="text-lg font-semibold">Vista previa</h3>
+                    <p className="text-sm text-muted-foreground">Las funcionalidades de cobro estarán disponibles próximamente</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -104,10 +115,9 @@ export default function HomePage() {
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-teal/10">
                     <Link2 className="h-6 w-6 text-teal" />
                   </div>
-                  <CardTitle>Enlaces de pago</CardTitle>
+                  <CardTitle>Enlaces de pago <span className="text-xs text-muted-foreground">(Próximamente)</span></CardTitle>
                   <CardDescription>
-                    Crea enlaces únicos para cobrar servicios específicos. Tus clientes pagan en segundos desde
-                    cualquier lugar.
+                    Próximamente podrás crear enlaces únicos para cobrar servicios específicos. Funcionalidad en desarrollo.
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -117,8 +127,8 @@ export default function HomePage() {
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
                     <CreditCard className="h-6 w-6 text-accent" />
                   </div>
-                  <CardTitle>Cobros digitales simples</CardTitle>
-                  <CardDescription>Recibe pagos de manera rápida y segura sin complicaciones técnicas</CardDescription>
+                  <CardTitle>Cobros digitales <span className="text-xs text-muted-foreground">(En desarrollo)</span></CardTitle>
+                  <CardDescription>Funcionalidad en desarrollo. Los cobros se procesarán mediante proveedores externos certificados.</CardDescription>
                 </CardHeader>
               </Card>
 
@@ -127,9 +137,9 @@ export default function HomePage() {
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                     <BarChart3 className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle>Panel profesional</CardTitle>
+                  <CardTitle>Panel profesional <span className="text-xs text-muted-foreground">(Beta)</span></CardTitle>
                   <CardDescription>
-                    Gestiona todos tus pagos y transacciones desde un dashboard intuitivo
+                    Panel de administración en desarrollo. Próximamente podrás gestionar tus servicios desde un dashboard intuitivo.
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -189,9 +199,9 @@ export default function HomePage() {
                     <div className="inline-flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-primary text-xl sm:text-2xl font-bold text-primary-foreground animate-scale-in animation-delay-600">
                       1
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold">Crea tu perfil</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold">Crea tu perfil <span className="text-xs text-muted-foreground">(Próximamente)</span></h3>
                     <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                      Organiza tu información profesional y define tus servicios.
+                      Próximamente podrás organizar tu información profesional y definir tus servicios.
                     </p>
                   </div>
                 </div>
@@ -201,9 +211,9 @@ export default function HomePage() {
                     <div className="inline-flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-accent text-xl sm:text-2xl font-bold text-accent-foreground animate-scale-in animation-delay-800">
                       2
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold">Genera solicitudes</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold">Genera solicitudes <span className="text-xs text-muted-foreground">(En desarrollo)</span></h3>
                     <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                      Envía solicitudes claras y profesionales para tus servicios.
+                      Funcionalidad en desarrollo. Próximamente podrás enviar solicitudes claras y profesionales para tus servicios.
                     </p>
                   </div>
                 </div>
@@ -213,9 +223,9 @@ export default function HomePage() {
                     <div className="inline-flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-primary text-xl sm:text-2xl font-bold text-primary-foreground animate-scale-in animation-delay-1000">
                       3
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold">Activa funciones premium</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold">Activa funciones premium <span className="text-xs text-muted-foreground">(Beta)</span></h3>
                     <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                      Mejora tu experiencia utilizando créditos HNLD para herramientas adicionales.
+                      Funcionalidad en desarrollo. Próximamente podrás mejorar tu experiencia utilizando créditos HNLD para herramientas adicionales.
                     </p>
                   </div>
                 </div>
@@ -287,26 +297,26 @@ export default function HomePage() {
               <div className="grid gap-6 sm:gap-8 lg:gap-10 md:grid-cols-2">
                 <Card className="border-border">
                   <CardHeader className="space-y-3 sm:space-y-4 px-4 sm:px-6 pt-6 sm:pt-8">
-                    <CardTitle className="text-xl sm:text-2xl">Plan básico</CardTitle>
+                    <CardTitle className="text-xl sm:text-2xl">Plan básico <span className="text-xs text-muted-foreground">(Próximamente)</span></CardTitle>
                     <div className="space-y-2">
                       <div className="text-3xl sm:text-4xl font-bold">L 0</div>
                       <p className="text-xs sm:text-sm text-muted-foreground">/ mes</p>
                     </div>
-                    <CardDescription className="text-sm">Perfecto para comenzar</CardDescription>
+                    <CardDescription className="text-sm">Perfecto para comenzar - Disponible próximamente</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4 sm:space-y-6 px-4 sm:px-6 pb-6 sm:pb-8">
                     <ul className="space-y-2 sm:space-y-3">
                       <li className="flex items-start gap-2 sm:gap-3">
                         <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Solicitudes de cobro simples</span>
+                        <span className="text-xs sm:text-sm">Solicitudes de cobro simples <span className="text-muted-foreground italic">(En desarrollo)</span></span>
                       </li>
                       <li className="flex items-start gap-2 sm:gap-3">
                         <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Gestión de actividades</span>
+                        <span className="text-xs sm:text-sm">Gestión de actividades <span className="text-muted-foreground italic">(Próximamente)</span></span>
                       </li>
                       <li className="flex items-start gap-2 sm:gap-3">
                         <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Herramientas esenciales</span>
+                        <span className="text-xs sm:text-sm">Herramientas esenciales <span className="text-muted-foreground italic">(Beta)</span></span>
                       </li>
                       <li className="flex items-start gap-2 sm:gap-3">
                         <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
@@ -332,29 +342,29 @@ export default function HomePage() {
                     <div className="inline-flex items-center rounded-full border border-teal/20 bg-teal/10 px-2 py-1 sm:px-3 sm:py-1 text-xs font-medium text-black w-fit">
                       Más popular
                     </div>
-                    <CardTitle className="text-xl sm:text-2xl">Plan profesional</CardTitle>
+                    <CardTitle className="text-xl sm:text-2xl">Plan profesional <span className="text-xs text-muted-foreground">(En desarrollo)</span></CardTitle>
                     <div className="space-y-2">
                       <div className="text-3xl sm:text-4xl font-bold">Funciones premium con HNLD</div>
                     </div>
-                    <CardDescription className="text-sm">Ideal para freelancers activos</CardDescription>
+                    <CardDescription className="text-sm">Ideal para freelancers activos - Disponible próximamente</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4 sm:space-y-6 px-4 sm:px-6 pb-6 sm:pb-8">
                     <ul className="space-y-2 sm:space-y-3">
                       <li className="flex items-start gap-2 sm:gap-3">
                         <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Solicitudes de cobro personalizadas</span>
+                        <span className="text-xs sm:text-sm">Solicitudes de cobro personalizadas <span className="text-muted-foreground italic">(Próximamente)</span></span>
                       </li>
                       <li className="flex items-start gap-2 sm:gap-3">
                         <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Reportes y estadísticas (próximamente)</span>
+                        <span className="text-xs sm:text-sm">Reportes y estadísticas <span className="text-muted-foreground italic">(En desarrollo)</span></span>
                       </li>
                       <li className="flex items-start gap-2 sm:gap-3">
                         <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Funciones premium activadas con HNLD</span>
+                        <span className="text-xs sm:text-sm">Funciones premium activadas con HNLD <span className="text-muted-foreground italic">(Beta)</span></span>
                       </li>
                       <li className="flex items-start gap-2 sm:gap-3">
                         <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Mejor organización del perfil</span>
+                        <span className="text-xs sm:text-sm">Mejor organización del perfil <span className="text-muted-foreground italic">(Próximamente)</span></span>
                       </li>
                       <li className="flex items-start gap-2 sm:gap-3">
                         <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
@@ -385,6 +395,11 @@ export default function HomePage() {
               <p className="mx-auto max-w-2xl text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed">
                 La solución completa para profesionales hondureños
               </p>
+              <div className="pt-4">
+                <p className="text-sm text-muted-foreground italic">
+                  Desde Honduras para freelancers 2025 — versión beta
+                </p>
+              </div>
             </div>
 
             <div className="grid gap-6 sm:gap-8 lg:gap-10 md:grid-cols-2 lg:grid-cols-3">
@@ -451,7 +466,7 @@ export default function HomePage() {
                 <AccordionItem value="item-1" className="rounded-lg border border-border bg-card px-4 sm:px-6">
                   <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">¿NMHN Pay procesa pagos directamente?</AccordionTrigger>
                   <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                    No. Todos los cobros se procesan mediante proveedores externos certificados PCI-DSS.
+                    No. NMHN Pay actualmente está en versión beta y aún no procesa pagos reales. Cuando esté disponible, todos los cobros se procesarán mediante proveedores externos certificados PCI-DSS. La plataforma no manejará fondos directamente.
                   </AccordionContent>
                 </AccordionItem>
 
@@ -460,7 +475,7 @@ export default function HomePage() {
                     ¿Qué son los créditos HNLD?
                   </AccordionTrigger>
                   <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                    Créditos internos, no dinero, y solo para funciones premium.
+                    Los créditos HNLD son créditos internos, no dinero, y solo para funciones premium. Esta funcionalidad estará disponible próximamente en la versión beta.
                   </AccordionContent>
                 </AccordionItem>
 
@@ -469,7 +484,7 @@ export default function HomePage() {
                     ¿Necesito cuenta bancaria?
                   </AccordionTrigger>
                   <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                    No para el uso básico.
+                    No para el uso básico. Cuando las funcionalidades estén disponibles, los métodos de pago dependerán de los proveedores externos que integremos.
                   </AccordionContent>
                 </AccordionItem>
 
@@ -478,7 +493,7 @@ export default function HomePage() {
                     ¿Puedo retirar dinero?
                   </AccordionTrigger>
                   <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                    No. NMHN Pay no maneja fondos.
+                    No. NMHN Pay no maneja fondos. La plataforma está en desarrollo y cuando esté disponible, no procesará ni almacenará dinero directamente.
                   </AccordionContent>
                 </AccordionItem>
 
@@ -487,7 +502,7 @@ export default function HomePage() {
                     ¿Qué métodos de pago aceptan?
                   </AccordionTrigger>
                   <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                    Solo a través de proveedores externos, nunca dentro de NMHN Pay.
+                    Cuando la plataforma esté disponible, los métodos de pago dependerán exclusivamente de proveedores externos certificados. NMHN Pay nunca procesará pagos directamente dentro de la plataforma.
                   </AccordionContent>
                 </AccordionItem>
 
@@ -496,7 +511,7 @@ export default function HomePage() {
                     ¿Es seguro?
                   </AccordionTrigger>
                   <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                    Sí, con buenas prácticas web y cifrado en tránsito.
+                    Sí, implementaremos buenas prácticas web y cifrado en tránsito. La plataforma está en desarrollo activo y se enfocará en la seguridad desde el inicio.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -514,7 +529,7 @@ export default function HomePage() {
                   Impulsa tu trabajo con herramientas diseñadas para ti
                 </h2>
                 <p className="mx-auto max-w-2xl text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed px-2 sm:px-0">
-                  Organiza tus servicios, envía solicitudes profesionales y activa funciones premium cuando las necesites.
+                  Próximamente podrás organizar tus servicios, enviar solicitudes profesionales y activar funciones premium cuando las necesites. Estamos trabajando para ofrecerte la mejor experiencia.
                 </p>
                 <div className="flex flex-col gap-3 sm:gap-4 sm:flex-row sm:justify-center pt-2">
                   <Button 
