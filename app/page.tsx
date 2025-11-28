@@ -37,22 +37,18 @@ export default function HomePage() {
             <div className="grid gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20 max-w-7xl mx-auto">
               <div className="flex flex-col justify-center space-y-4 sm:space-y-6 lg:space-y-8 order-1">
                 <h1 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl animate-text-reveal animation-delay-200">
-                  Servicios electrónicos de pago para emprendedores hondureños
+                  Gestiona tus servicios y solicitudes de cobro desde una plataforma simple y profesional
                 </h1>
                 <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed text-pretty animate-text-reveal animation-delay-400">
-                  NMHN Pay facilita cobros digitales, enlaces de pago y herramientas modernas para freelancers y
-                  consultores. Gestiona tus servicios de manera simple, segura y profesional.
+                  NMHN Pay ofrece herramientas digitales para que emprendedores, freelancers y consultores hondureños organicen su trabajo, envíen solicitudes de cobro y accedan a funciones premium de manera segura.
                 </p>
                 <div className="flex flex-col gap-3 sm:gap-4 sm:flex-row animate-slide-in-left animation-delay-600 pt-2">
                   <Button 
                     size="lg" 
                     className="w-full sm:w-auto bg-teal text-teal-foreground hover:bg-teal/90"
-                    onClick={() => {
-                      const element = document.getElementById("servicios")
-                      element?.scrollIntoView({ behavior: "smooth", block: "start" })
-                    }}
+                    onClick={() => setIsConstructionModalOpen(true)}
                   >
-                    Explorar servicios
+                    Comenzar
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                   <Button 
@@ -64,7 +60,7 @@ export default function HomePage() {
                       element?.scrollIntoView({ behavior: "smooth", block: "start" })
                     }}
                   >
-                    Ver cómo funciona
+                    Saber más
                   </Button>
                 </div>
               </div>
@@ -83,10 +79,7 @@ export default function HomePage() {
             <div className="mx-auto max-w-3xl text-center space-y-4 sm:space-y-6 lg:space-y-8">
               <h2 className="text-2xl font-bold tracking-tight text-balance sm:text-3xl md:text-4xl lg:text-5xl">Sobre NMHN <span className="text-teal">Pay</span></h2>
               <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed px-2 sm:px-0">
-                NMHN Pay es una plataforma digital que ofrece herramientas para apoyar a emprendedores, freelancers y consultores hondureños en la gestión de sus servicios profesionales. La plataforma facilita la creación de solicitudes de cobro digitales, la administración de actividades y el acceso a funciones diseñadas para impulsar su crecimiento.
-              </p>
-              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed px-2 sm:px-0">
-                NMHN Pay no es una entidad financiera ni ofrece servicios bancarios. No opera como billetera electrónica, no realiza cambio de divisas y no presta servicios de envío de dinero. Nuestro enfoque es brindar herramientas tecnológicas y funcionalidades digitales que complementan la actividad comercial de nuestros usuarios.
+                NMHN Pay es una plataforma digital creada para apoyar a emprendedores, freelancers y consultores hondureños en la organización de su trabajo y la creación de solicitudes de cobro profesionales. Nuestro enfoque es ofrecer herramientas tecnológicas accesibles que impulsen la actividad comercial sin operar como entidad financiera.
               </p>
             </div>
           </div>
@@ -198,7 +191,7 @@ export default function HomePage() {
                     </div>
                     <h3 className="text-xl sm:text-2xl font-bold">Crea tu perfil</h3>
                     <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                      Regístrate en minutos y configura tu perfil profesional con tu información de negocio
+                      Organiza tu información profesional y define tus servicios.
                     </p>
                   </div>
                 </div>
@@ -208,9 +201,9 @@ export default function HomePage() {
                     <div className="inline-flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-accent text-xl sm:text-2xl font-bold text-accent-foreground animate-scale-in animation-delay-800">
                       2
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold">Configura tus cobros</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold">Genera solicitudes</h3>
                     <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                      Personaliza tus enlaces de pago, define tus servicios y establece tus tarifas
+                      Envía solicitudes claras y profesionales para tus servicios.
                     </p>
                   </div>
                 </div>
@@ -220,9 +213,9 @@ export default function HomePage() {
                     <div className="inline-flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-primary text-xl sm:text-2xl font-bold text-primary-foreground animate-scale-in animation-delay-1000">
                       3
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold">Recibe pagos</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold">Activa funciones premium</h3>
                     <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                      Comparte tus enlaces y comienza a recibir pagos de manera segura por tus servicios
+                      Mejora tu experiencia utilizando créditos HNLD para herramientas adicionales.
                     </p>
                   </div>
                 </div>
@@ -247,10 +240,7 @@ export default function HomePage() {
               </CardHeader>
               <CardContent className="space-y-4 sm:space-y-6 lg:space-y-8 px-4 sm:px-6 lg:px-8 pb-6 sm:pb-8 lg:pb-10">
                 <p className="text-center text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  Los HNLD son créditos internos diseñados para activar funciones premium, herramientas adicionales y servicios digitales dentro del ecosistema NMHN Pay.
-                </p>
-                <p className="text-center text-xs sm:text-sm text-muted-foreground leading-relaxed italic">
-                  Los HNLD no representan dinero, no son divisas ni instrumentos financieros, no tienen valor fuera de NMHN Pay y no pueden canjearse por dinero, reembolsarse ni utilizarse en plataformas de terceros. Su uso es exclusivamente funcional dentro de la plataforma.
+                  Los HNLD son créditos internos diseñados exclusivamente para activar funciones premium y herramientas adicionales dentro de NMHN Pay. No representan dinero, no pueden canjearse por efectivo, no son divisas ni instrumentos financieros y no tienen valor fuera de la plataforma. Su uso es únicamente funcional dentro de NMHN Pay.
                 </p>
                 <div className="grid gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   <div className="flex items-start gap-3 rounded-lg border border-border bg-background p-4">
@@ -294,7 +284,7 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div className="grid gap-6 sm:gap-8 lg:gap-10 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-6 sm:gap-8 lg:gap-10 md:grid-cols-2">
                 <Card className="border-border">
                   <CardHeader className="space-y-3 sm:space-y-4 px-4 sm:px-6 pt-6 sm:pt-8">
                     <CardTitle className="text-xl sm:text-2xl">Plan básico</CardTitle>
@@ -308,19 +298,23 @@ export default function HomePage() {
                     <ul className="space-y-2 sm:space-y-3">
                       <li className="flex items-start gap-2 sm:gap-3">
                         <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Hasta 10 solicitudes de cobro</span>
+                        <span className="text-xs sm:text-sm">Solicitudes de cobro simples</span>
                       </li>
                       <li className="flex items-start gap-2 sm:gap-3">
                         <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Acceso a herramientas esenciales</span>
+                        <span className="text-xs sm:text-sm">Gestión de actividades</span>
                       </li>
                       <li className="flex items-start gap-2 sm:gap-3">
                         <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Panel básico</span>
+                        <span className="text-xs sm:text-sm">Herramientas esenciales</span>
                       </li>
                       <li className="flex items-start gap-2 sm:gap-3">
                         <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Soporte por correo electrónico</span>
+                        <span className="text-xs sm:text-sm">Acceso desde cualquier dispositivo</span>
+                      </li>
+                      <li className="flex items-start gap-2 sm:gap-3">
+                        <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
+                        <span className="text-xs sm:text-sm">Soporte por correo</span>
                       </li>
                     </ul>
                     <Button 
@@ -340,8 +334,7 @@ export default function HomePage() {
                     </div>
                     <CardTitle className="text-xl sm:text-2xl">Plan profesional</CardTitle>
                     <div className="space-y-2">
-                      <div className="text-3xl sm:text-4xl font-bold">L 299</div>
-                      <p className="text-xs sm:text-sm text-muted-foreground">/ mes</p>
+                      <div className="text-3xl sm:text-4xl font-bold">Funciones premium con HNLD</div>
                     </div>
                     <CardDescription className="text-sm">Ideal para freelancers activos</CardDescription>
                   </CardHeader>
@@ -349,15 +342,19 @@ export default function HomePage() {
                     <ul className="space-y-2 sm:space-y-3">
                       <li className="flex items-start gap-2 sm:gap-3">
                         <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Solicitudes de cobro ampliadas</span>
+                        <span className="text-xs sm:text-sm">Solicitudes de cobro personalizadas</span>
                       </li>
                       <li className="flex items-start gap-2 sm:gap-3">
                         <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Panel profesional completo</span>
+                        <span className="text-xs sm:text-sm">Reportes y estadísticas (próximamente)</span>
                       </li>
                       <li className="flex items-start gap-2 sm:gap-3">
                         <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Estadísticas y reportes avanzados</span>
+                        <span className="text-xs sm:text-sm">Funciones premium activadas con HNLD</span>
+                      </li>
+                      <li className="flex items-start gap-2 sm:gap-3">
+                        <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
+                        <span className="text-xs sm:text-sm">Mejor organización del perfil</span>
                       </li>
                       <li className="flex items-start gap-2 sm:gap-3">
                         <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
@@ -369,44 +366,6 @@ export default function HomePage() {
                       onClick={() => setIsConstructionModalOpen(true)}
                     >
                       Comenzar ahora
-                    </Button>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-border md:col-span-2 lg:col-span-1">
-                  <CardHeader className="space-y-3 sm:space-y-4 px-4 sm:px-6 pt-6 sm:pt-8">
-                    <CardTitle className="text-xl sm:text-2xl">Plan negocios</CardTitle>
-                    <div className="space-y-2">
-                      <div className="text-3xl sm:text-4xl font-bold">L 599</div>
-                      <p className="text-xs sm:text-sm text-muted-foreground">/ mes</p>
-                    </div>
-                    <CardDescription className="text-sm">Diseñado para equipos y empresas</CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-4 sm:space-y-6 px-4 sm:px-6 pb-6 sm:pb-8">
-                    <ul className="space-y-2 sm:space-y-3">
-                      <li className="flex items-start gap-2 sm:gap-3">
-                        <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Todo lo del plan Profesional</span>
-                      </li>
-                      <li className="flex items-start gap-2 sm:gap-3">
-                        <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Gestión de múltiples usuarios</span>
-                      </li>
-                      <li className="flex items-start gap-2 sm:gap-3">
-                        <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Integraciones personalizadas</span>
-                      </li>
-                      <li className="flex items-start gap-2 sm:gap-3">
-                        <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Soporte empresarial ampliado</span>
-                      </li>
-                    </ul>
-                    <Button 
-                      className="w-full bg-transparent text-sm sm:text-base" 
-                      variant="outline"
-                      onClick={() => setIsConstructionModalOpen(true)}
-                    >
-                      Contactar ventas
                     </Button>
                   </CardContent>
                 </Card>
@@ -433,60 +392,42 @@ export default function HomePage() {
                 <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg bg-primary/10">
                   <Shield className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold">Seguridad garantizada</h3>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  Protección de nivel bancario para todas tus transacciones y datos personales
-                </p>
+                <h3 className="text-lg sm:text-xl font-bold">Plataforma segura y confiable</h3>
               </div>
 
               <div className="space-y-3 sm:space-y-4">
                 <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg bg-accent/10">
                   <Zap className="h-5 w-5 sm:h-6 sm:w-6 text-accent" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold">Facilidad de uso</h3>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  Interfaz intuitiva diseñada para que puedas empezar a cobrar en minutos
-                </p>
+                <h3 className="text-lg sm:text-xl font-bold">Herramientas modernas</h3>
               </div>
 
               <div className="space-y-3 sm:space-y-4">
                 <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <Zap className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+                  <Users className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold">Rapidez</h3>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  Procesamiento instantáneo de pagos para que recibas tu dinero sin demoras
-                </p>
+                <h3 className="text-lg sm:text-xl font-bold">Sin conocimientos técnicos</h3>
               </div>
 
               <div className="space-y-3 sm:space-y-4">
                 <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg bg-accent/10">
-                  <Headphones className="h-5 w-5 sm:h-6 sm:w-6 text-accent" />
+                  <BarChart3 className="h-5 w-5 sm:h-6 sm:w-6 text-accent" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold">Soporte local</h3>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  Equipo de soporte hondureño disponible para ayudarte cuando lo necesites
-                </p>
+                <h3 className="text-lg sm:text-xl font-bold">Interfaz fácil de usar</h3>
               </div>
 
               <div className="space-y-3 sm:space-y-4">
                 <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <BarChart3 className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+                  <Coins className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold">Ahorro de tiempo</h3>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  Automatiza tus cobros y dedica más tiempo a hacer crecer tu negocio
-                </p>
+                <h3 className="text-lg sm:text-xl font-bold">Créditos HNLD simples</h3>
               </div>
 
               <div className="space-y-3 sm:space-y-4">
                 <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg bg-accent/10">
                   <CheckCircle2 className="h-5 w-5 sm:h-6 sm:w-6 text-accent" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold">Confianza</h3>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  Plataforma diseñada por y para emprendedores hondureños
-                </p>
+                <h3 className="text-lg sm:text-xl font-bold">Ideal para freelancers y emprendedores</h3>
               </div>
             </div>
             </div>
@@ -508,77 +449,54 @@ export default function HomePage() {
 
               <Accordion type="single" collapsible className="space-y-3 sm:space-y-4">
                 <AccordionItem value="item-1" className="rounded-lg border border-border bg-card px-4 sm:px-6">
-                  <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">¿Qué es NMHN Pay?</AccordionTrigger>
+                  <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">¿NMHN Pay procesa pagos directamente?</AccordionTrigger>
                   <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                    NMHN Pay es una plataforma digital que proporciona herramientas para apoyar a emprendedores, freelancers y consultores hondureños en la gestión de cobros electrónicos, creación de enlaces de pago y administración digital de sus servicios profesionales. No es una entidad financiera, no ofrece servicios bancarios, no opera como billetera electrónica, no realiza cambio de divisas ni presta servicios de envío de dinero.
+                    No. Todos los cobros se procesan mediante proveedores externos certificados PCI-DSS.
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-2" className="rounded-lg border border-border bg-card px-4 sm:px-6">
                   <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
-                    ¿Cómo funciona la plataforma?
+                    ¿Qué son los créditos HNLD?
                   </AccordionTrigger>
                   <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                    La plataforma ofrece funciones digitales y herramientas tecnológicas que complementan la actividad comercial de sus usuarios. Es muy simple: crea tu perfil, configura tus enlaces de pago con las cantidades que desees cobrar, comparte los enlaces con tus clientes, y recibe los pagos de forma segura. Todo desde un panel fácil de usar.
+                    Créditos internos, no dinero, y solo para funciones premium.
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-3" className="rounded-lg border border-border bg-card px-4 sm:px-6">
                   <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
-                    ¿Qué son los créditos HNLD?
+                    ¿Necesito cuenta bancaria?
                   </AccordionTrigger>
                   <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                    Los HNLD son créditos digitales internos, exclusivos para activar funciones premium, herramientas adicionales y servicios digitales dentro del ecosistema NMHN Pay. Los créditos no representan dinero, no son divisas ni instrumentos financieros, no tienen valor fuera de la plataforma, no son reembolsables y no pueden canjearse por dinero ni transferirse hacia terceros sistemas o plataformas. El usuario entiende que los créditos tienen únicamente un propósito funcional dentro de NMHN Pay.
+                    No para el uso básico.
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-4" className="rounded-lg border border-border bg-card px-4 sm:px-6">
                   <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
-                    ¿Es seguro usar NMHN Pay?
+                    ¿Puedo retirar dinero?
                   </AccordionTrigger>
                   <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                    Implementamos controles técnicos y organizativos diseñados para proteger su información, incluyendo cifrado de datos en tránsito, acceso restringido basado en roles, monitoreo de actividad inusual, auditorías regulares y medidas de prevención y detección de fraude. Sin embargo, ninguna plataforma digital puede garantizar seguridad absoluta.
+                    No. NMHN Pay no maneja fondos.
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-5" className="rounded-lg border border-border bg-card px-4 sm:px-6">
                   <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
-                    ¿Cuánto tiempo toma empezar a usar la plataforma?
+                    ¿Qué métodos de pago aceptan?
                   </AccordionTrigger>
                   <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                    Puedes crear tu cuenta y generar tu primer enlace de pago en menos de 5 minutos. Nuestro proceso de
-                    registro es rápido y sencillo.
+                    Solo a través de proveedores externos, nunca dentro de NMHN Pay.
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-6" className="rounded-lg border border-border bg-card px-4 sm:px-6">
                   <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
-                    ¿Qué métodos de pago aceptan?
+                    ¿Es seguro?
                   </AccordionTrigger>
                   <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                    Actualmente los cobros electrónicos realizados a través de NMHN Pay son procesados mediante proveedores externos certificados. Estos proveedores permiten aceptar pagos con tarjetas de débito y crédito, según la disponibilidad que cada pasarela admita en Honduras.
-                    <br /><br />
-                    NMHN Pay no almacena información de tarjetas ni procesa transacciones de forma directa. Todo el proceso se realiza mediante plataformas de pago que cumplen con los estándares internacionales de seguridad (PCI-DSS).
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="item-7" className="rounded-lg border border-border bg-card px-4 sm:px-6">
-                  <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
-                    ¿Puedo cambiar de plan en cualquier momento?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                    Sí, puedes actualizar o cambiar tu plan en cualquier momento desde tu panel de control. Los cambios
-                    se aplicarán inmediatamente y se ajustarán en tu próxima facturación.
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="item-8" className="rounded-lg border border-border bg-card px-4 sm:px-6">
-                  <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
-                    ¿Ofrecen soporte técnico?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                    Sí, contamos con un equipo de soporte dedicado disponible para ayudarte. Todos los planes incluyen
-                    soporte por email, y los planes superiores tienen acceso a soporte prioritario.
+                    Sí, con buenas prácticas web y cifrado en tránsito.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -593,11 +511,10 @@ export default function HomePage() {
             <Card className="border-border bg-gradient-to-br from-primary/5 via-card to-teal/10">
               <CardContent className="p-6 sm:p-8 md:p-12 lg:p-16 text-center space-y-4 sm:space-y-6 lg:space-y-8">
                 <h2 className="text-2xl font-bold tracking-tight text-balance sm:text-3xl md:text-4xl lg:text-5xl">
-                  ¿Listo para comenzar?
+                  Impulsa tu trabajo con herramientas diseñadas para ti
                 </h2>
                 <p className="mx-auto max-w-2xl text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed px-2 sm:px-0">
-                  Únete a cientos de emprendedores hondureños que ya están transformando la forma en que cobran por sus
-                  servicios
+                  Organiza tus servicios, envía solicitudes profesionales y activa funciones premium cuando las necesites.
                 </p>
                 <div className="flex flex-col gap-3 sm:gap-4 sm:flex-row sm:justify-center pt-2">
                   <Button 
@@ -605,11 +522,8 @@ export default function HomePage() {
                     className="w-full sm:w-auto bg-teal text-teal-foreground hover:bg-teal/90"
                     onClick={() => setIsConstructionModalOpen(true)}
                   >
-                    Comenzar gratis
+                    Comienza ahora
                     <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                    Contactar ventas
                   </Button>
                 </div>
               </CardContent>
