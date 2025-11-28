@@ -115,9 +115,9 @@ export default function HomePage() {
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-teal/10">
                     <Link2 className="h-6 w-6 text-teal" />
                   </div>
-                  <CardTitle>Enlaces de pago <span className="text-xs text-muted-foreground">(Próximamente)</span></CardTitle>
+                  <CardTitle>Solicitudes digitales <span className="text-xs text-muted-foreground">(Próximamente)</span></CardTitle>
                   <CardDescription>
-                    Próximamente podrás crear enlaces únicos para cobrar servicios específicos. Funcionalidad en desarrollo.
+                    Crea solicitudes digitales para tus servicios profesionales. Funcionalidad en desarrollo.
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -211,9 +211,9 @@ export default function HomePage() {
                     <div className="inline-flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-accent text-xl sm:text-2xl font-bold text-accent-foreground animate-scale-in animation-delay-800">
                       2
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold">Genera solicitudes <span className="text-xs text-muted-foreground">(En desarrollo)</span></h3>
+                    <h3 className="text-xl sm:text-2xl font-bold">Genera solicitudes digitales para tus servicios <span className="text-xs text-muted-foreground">(En desarrollo)</span></h3>
                     <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                      Funcionalidad en desarrollo. Próximamente podrás enviar solicitudes claras y profesionales para tus servicios.
+                      Funcionalidad en desarrollo. Próximamente podrás crear solicitudes digitales claras y profesionales para tus servicios.
                     </p>
                   </div>
                 </div>
@@ -308,7 +308,7 @@ export default function HomePage() {
                     <ul className="space-y-2 sm:space-y-3">
                       <li className="flex items-start gap-2 sm:gap-3">
                         <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Solicitudes de cobro simples <span className="text-muted-foreground italic">(En desarrollo)</span></span>
+                        <span className="text-xs sm:text-sm">Solicitudes digitales simples <span className="text-muted-foreground italic">(En desarrollo)</span></span>
                       </li>
                       <li className="flex items-start gap-2 sm:gap-3">
                         <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
@@ -352,7 +352,7 @@ export default function HomePage() {
                     <ul className="space-y-2 sm:space-y-3">
                       <li className="flex items-start gap-2 sm:gap-3">
                         <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Solicitudes de cobro personalizadas <span className="text-muted-foreground italic">(Próximamente)</span></span>
+                        <span className="text-xs sm:text-sm">Solicitudes digitales personalizadas <span className="text-muted-foreground italic">(Próximamente)</span></span>
                       </li>
                       <li className="flex items-start gap-2 sm:gap-3">
                         <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />

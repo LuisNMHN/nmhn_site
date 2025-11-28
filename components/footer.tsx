@@ -69,7 +69,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 sm:mt-12 border-t border-border pt-6 sm:pt-8 text-center text-xs sm:text-sm text-muted-foreground">
+        <div className="mt-8 sm:mt-12 border-t border-border pt-6 sm:pt-8 space-y-2 text-center text-xs sm:text-sm text-muted-foreground">
+          <p>NMHN Pay se encuentra en versión beta. Algunas funciones están en desarrollo.</p>
           <p>&copy; 2025 NETMARKETHN LLC. Todos los derechos reservados.</p>
         </div>
       </div>
