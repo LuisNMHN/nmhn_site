@@ -12,26 +12,14 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 // <CHANGE> Updated metadata for NMHN
 export const metadata: Metadata = {
-  title: "NMHN - impulsando el mercado digital de Honduras",
+  title: "NMHN - Impulsando el mercado digital de Honduras",
   description:
     "Empresa tecnológica orientada a impulsar el mercado digital en Honduras, conectando a emprendedores, negocios y usuarios con soluciones modernas y accesibles.",
   generator: "v0.app",
   icons: {
-    icon: [
-      {
-        url: "/favicon-32x32.png",
-        sizes: "32x32",
-        type: "image/png",
-      },
-      {
-        url: "/favicon.ico",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
 }
 
