@@ -22,6 +22,9 @@ export const metadata: Metadata = {
         url: "/favicon.ico",
       },
       {
+        url: "/favicon-32x32.png",
+      },
+      {
         url: "/icon-light-32x32.png",
         media: "(prefers-color-scheme: light)",
       },
