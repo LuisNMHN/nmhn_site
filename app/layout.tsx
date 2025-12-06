@@ -10,11 +10,11 @@ import "./globals.css"
 const _inter = Inter({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
-// <CHANGE> Updated metadata for NMHN Pay
+// <CHANGE> Updated metadata for NMHN
 export const metadata: Metadata = {
-  title: "NMHN Pay - Servicios electrónicos de pago para emprendedores hondureños",
+  title: "NMHN - impulsando el mercado digital de Honduras",
   description:
-    "Plataforma de pagos digitales que facilita cobros digitales, enlaces de pago y herramientas para emprendedores, freelancers y consultores en Honduras.",
+    "Empresa tecnológica orientada a impulsar el mercado digital en Honduras, conectando a emprendedores, negocios y usuarios con soluciones modernas y accesibles.",
   generator: "v0.app",
   icons: {
     icon: [

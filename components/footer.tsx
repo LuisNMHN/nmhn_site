@@ -1,16 +1,21 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-muted/30">
+    <footer className="border-t border-border bg-teal/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-8 sm:py-12 lg:py-16">
         <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-3 sm:space-y-4">
-            <span className="text-base sm:text-lg font-bold">
-              NMHN <span className="text-teal">Pay</span>
-            </span>
+            <Image
+              src="/NMHN.png"
+              alt="NMHN"
+              width={80}
+              height={26}
+              className="h-5 sm:h-6 w-auto object-contain mb-2 grayscale"
+            />
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Servicios electrónicos de pago para emprendedores, freelancers y consultores hondureños.
+              Empresa tecnológica orientada a impulsar el mercado digital en Honduras.
             </p>
           </div>
 
@@ -24,12 +29,17 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/#servicios" className="text-muted-foreground transition-colors hover:text-foreground">
-                  Servicios
+                  Sobre nosotros
                 </Link>
               </li>
               <li>
-                <Link href="/#precios" className="text-muted-foreground transition-colors hover:text-foreground">
-                  Precios
+                <Link href="/#plataforma-desarrollo" className="text-muted-foreground transition-colors hover:text-foreground">
+                  Plataforma tecnológica
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="text-muted-foreground transition-colors hover:text-foreground">
+                  Preguntas frecuentes
                 </Link>
               </li>
             </ul>
@@ -69,10 +79,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 sm:mt-12 border-t border-border pt-6 sm:pt-8 space-y-2 text-center text-xs sm:text-sm text-muted-foreground">
-          <p>NMHN Pay se encuentra en versión beta. Algunas funciones están en desarrollo.</p>
-          <p>&copy; 2025 NETMARKETHN LLC. Todos los derechos reservados.</p>
-        </div>
+                <div className="mt-8 sm:mt-12 border-t border-border pt-6 sm:pt-8 space-y-2 text-center text-xs sm:text-sm text-muted-foreground">
+                  <p>&copy; 2025 NETMARKETHN LLC. Todos los derechos reservados.</p>
+                </div>
       </div>
     </footer>
   )

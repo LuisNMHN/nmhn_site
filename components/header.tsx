@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Menu, X, Construction } from "lucide-react"
@@ -12,15 +13,17 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <nav className="container mx-auto flex h-14 sm:h-16 items-center justify-between px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12">
-        <Link href="/" className="flex items-center space-x-1.5 sm:space-x-2 shrink-0">
-          <span className="text-lg sm:text-xl font-bold text-foreground">
-            NMHN <span className="text-teal">Pay</span>
-          </span>
-          <span className="ml-2 inline-flex items-center rounded-full border border-yellow-500/30 bg-yellow-500/10 px-2 py-0.5 text-[10px] font-medium text-yellow-600 dark:text-yellow-400">
-            BETA
-          </span>
-        </Link>
+              <nav className="container mx-auto flex h-14 sm:h-16 items-center justify-between px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12">
+                <Link href="/" className="flex items-center space-x-1.5 sm:space-x-2 shrink-0">
+                  <Image
+                    src="/NMHN.png"
+                    alt="NMHN"
+                    width={100}
+                    height={32}
+                    className="h-6 sm:h-7 w-auto object-contain"
+                    priority
+                  />
+                </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden items-center space-x-6 lg:space-x-8 md:flex">
@@ -34,31 +37,19 @@ export function Header() {
             href="/#servicios"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap"
           >
-            Servicios
+            Sobre nosotros
           </Link>
           <Link
-            href="/#como-funciona"
+            href="/#plataforma-desarrollo"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap"
           >
-            Cómo funciona
+            Plataforma tecnológica
           </Link>
           <Link
-            href="/#precios"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap"
-          >
-            Precios
-          </Link>
-          <Link
-            href="/#faq"
+            href="/faq"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap hidden lg:block"
           >
             Preguntas frecuentes
-          </Link>
-          <Link
-            href="/contacto"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap"
-          >
-            Contacto
           </Link>
         </div>
 
@@ -66,9 +57,16 @@ export function Header() {
           <Button 
             size="default" 
             className="bg-teal text-teal-foreground hover:bg-teal/90 whitespace-nowrap"
-            onClick={() => setIsConstructionModalOpen(true)}
+            onClick={() => {
+              const element = document.getElementById("contacto")
+              if (element) {
+                element.scrollIntoView({ behavior: "smooth", block: "start" })
+              } else {
+                window.location.href = "/contacto"
+              }
+            }}
           >
-            Comenzar
+            Contactar
           </Button>
         </div>
 
@@ -98,45 +96,36 @@ export function Header() {
               className="block py-2 text-sm sm:text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Servicios
+              Sobre nosotros
             </Link>
             <Link
-              href="/#como-funciona"
+              href="/#plataforma-desarrollo"
               className="block py-2 text-sm sm:text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Cómo funciona
+              Plataforma tecnológica
             </Link>
             <Link
-              href="/#precios"
-              className="block py-2 text-sm sm:text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Precios
-            </Link>
-            <Link
-              href="/#faq"
+              href="/faq"
               className="block py-2 text-sm sm:text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >
               Preguntas frecuentes
             </Link>
-            <Link
-              href="/contacto"
-              className="block py-2 text-sm sm:text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Contacto
-            </Link>
             <Button 
               size="default" 
               className="w-full mt-3 sm:mt-4 bg-teal text-teal-foreground hover:bg-teal/90 text-sm sm:text-base"
               onClick={() => {
-                setIsConstructionModalOpen(true)
                 setMobileMenuOpen(false)
+                const element = document.getElementById("contacto")
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth", block: "start" })
+                } else {
+                  window.location.href = "/contacto"
+                }
               }}
             >
-              Comenzar
+              Contactar
             </Button>
           </div>
         </div>
@@ -153,7 +142,7 @@ export function Header() {
               Sección en construcción
             </DialogTitle>
             <DialogDescription className="text-center text-base">
-              Estamos trabajando en esta funcionalidad. Pronto estará disponible para que puedas comenzar a usar NMHN Pay.
+              Estamos trabajando en esta funcionalidad. Pronto estará disponible.
             </DialogDescription>
           </DialogHeader>
           <div className="mt-4 flex justify-center">

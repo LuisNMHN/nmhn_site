@@ -1,30 +1,77 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { CardPaymentsDemo } from "@/components/card-payments-demo"
-import { PaymentLinksDemo } from "@/components/payment-links-demo"
+import { PlatformAnimation } from "@/components/platform-animation"
+import Image from "next/image"
 import {
   ArrowRight,
-  CreditCard,
+  Construction,
+  Target,
+  Lightbulb,
+  Rocket,
+  Users,
+  TrendingUp,
   Shield,
   Zap,
-  BarChart3,
-  Headphones,
-  CheckCircle2,
-  Coins,
-  Link2,
-  Users,
-  Construction,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 export default function HomePage() {
   const [isConstructionModalOpen, setIsConstructionModalOpen] = useState(false)
+  const [currentCard, setCurrentCard] = useState(0)
+
+  const cards = [
+    {
+      icon: Lightbulb,
+      iconColor: "text-blue-500",
+      bgColor: "bg-blue-500/10",
+      title: "Iniciativa tecnológica",
+      description: "Orientada a impulsar el mercado digital en Honduras.",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop",
+      imageAlt: "Tecnología e innovación",
+    },
+    {
+      icon: Rocket,
+      iconColor: "text-purple-500",
+      bgColor: "bg-purple-500/10",
+      title: "Soluciones modernas",
+      description: "Facilitamos la transición hacia modelos más modernos de comercio y colaboración.",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
+      imageAlt: "Soluciones modernas y digitales",
+    },
+    {
+      icon: Users,
+      iconColor: "text-green-500",
+      bgColor: "bg-green-500/10",
+      title: "Acompañamiento",
+      description: "Acompañamos a emprendedores, profesionales y pequeñas empresas.",
+      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop",
+      imageAlt: "Colaboración y acompañamiento",
+    },
+  ]
+
+  const nextCard = () => {
+    setCurrentCard((prev) => (prev + 1) % cards.length)
+  }
+
+  const prevCard = () => {
+    setCurrentCard((prev) => (prev - 1 + cards.length) % cards.length)
+  }
+
+  // Auto-rotación del carrusel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentCard((prev) => (prev + 1) % cards.length)
+    }, 5000) // Cambia cada 5 segundos
+
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -36,516 +83,312 @@ export default function HomePage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="grid gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20 max-w-7xl mx-auto">
               <div className="flex flex-col justify-center space-y-4 sm:space-y-6 lg:space-y-8 order-1">
-                <div className="inline-flex items-center rounded-full border border-yellow-500/30 bg-yellow-500/10 px-3 py-1 text-xs font-medium text-yellow-600 dark:text-yellow-400 mb-2 animate-text-reveal animation-delay-100">
-                  Versión Beta – Algunas funciones están en desarrollo
-                </div>
                 <h1 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl animate-text-reveal animation-delay-200">
-                  Gestiona tus servicios y solicitudes de cobro desde una plataforma simple y profesional
+                  Impulsando el mercado digital de Honduras
                 </h1>
                 <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed text-pretty animate-text-reveal animation-delay-400">
-                  NMHN Pay está en desarrollo. Próximamente ofreceremos herramientas digitales para que emprendedores, freelancers y consultores hondureños organicen su trabajo, envíen solicitudes de cobro y accedan a funciones premium de manera segura.
-                </p>
-                <p className="text-sm text-muted-foreground italic animate-text-reveal animation-delay-500">
-                  Desde Honduras para freelancers 2025 — versión beta
+                  NETMARKETHN es una empresa tecnológica que trabaja para fortalecer la economía digital hondureña, conectando a emprendedores, negocios y usuarios con soluciones modernas, accesibles y pensadas para el mercado local.
                 </p>
                 <div className="flex flex-col gap-3 sm:gap-4 sm:flex-row animate-slide-in-left animation-delay-600 pt-2">
-                  <Button 
-                    size="lg" 
-                    className="w-full sm:w-auto bg-teal text-teal-foreground hover:bg-teal/90"
-                    onClick={() => setIsConstructionModalOpen(true)}
-                  >
-                    Comenzar
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
                   <Button 
                     size="lg" 
                     variant="outline" 
                     className="w-full sm:w-auto"
                     onClick={() => {
-                      const element = document.getElementById("como-funciona")
+                      const element = document.getElementById("plataforma-desarrollo")
                       element?.scrollIntoView({ behavior: "smooth", block: "start" })
                     }}
                   >
-                    Saber más
+                    Conocer más
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    className="w-full sm:w-auto bg-teal text-teal-foreground hover:bg-teal/90"
+                    onClick={() => {
+                      const element = document.getElementById("contacto")
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth", block: "start" })
+                      } else {
+                        window.location.href = "/contacto"
+                      }
+                    }}
+                  >
+                    Contactar al equipo
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </div>
               </div>
 
               <div className="flex flex-col items-center justify-center gap-6 sm:gap-8 lg:gap-10 order-2 lg:order-2">
-                <div className="w-full max-w-md mx-auto rounded-xl border-2 border-dashed border-muted-foreground/30 bg-muted/20 p-8 sm:p-12 text-center">
-                  <div className="space-y-3">
-                    <div className="text-4xl">🚧</div>
-                    <h3 className="text-lg font-semibold">Vista previa</h3>
-                    <p className="text-sm text-muted-foreground">Las funcionalidades de cobro estarán disponibles próximamente</p>
+                <PlatformAnimation />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Sobre nosotros */}
+        <section className="border-y border-border bg-gradient-to-b from-background via-muted/30 to-background py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden">
+          <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
+            <div className="mx-auto max-w-4xl space-y-8 sm:space-y-12">
+              <div className="text-center space-y-4 sm:space-y-6">
+                <h2 className="text-2xl font-bold tracking-tight text-balance sm:text-3xl md:text-4xl lg:text-5xl">Sobre nosotros</h2>
+              </div>
+              <div className="relative max-w-2xl mx-auto">
+                {/* Carrusel */}
+                <div className="overflow-hidden rounded-lg">
+                  <div 
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentCard * 100}%)` }}
+                  >
+                    {cards.map((card, index) => {
+                      const Icon = card.icon
+                      return (
+                        <div key={index} className="min-w-full px-4">
+                          <div className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden group">
+                            <Image
+                              src={card.image}
+                              alt={card.imageAlt}
+                              fill
+                              className="object-cover group-hover:scale-105 transition-transform duration-500"
+                              sizes="(max-width: 768px) 100vw, 800px"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+                            <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-8">
+                              <div className={`absolute top-4 right-4 inline-flex items-center justify-center w-12 h-12 rounded-full ${card.bgColor} backdrop-blur-sm`}>
+                                <Icon className={`w-6 h-6 ${card.iconColor}`} />
+                              </div>
+                              <h3 className="font-semibold text-base sm:text-lg text-white mb-2">
+                                {card.title}
+                              </h3>
+                              <p className="text-sm sm:text-base text-white leading-relaxed">
+                                {card.description}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      )
+                    })}
                   </div>
+                </div>
+
+                {/* Controles de navegación */}
+                <div className="flex items-center justify-center gap-4 mt-6">
+                  <button
+                    onClick={prevCard}
+                    className="p-2 rounded-full bg-card border border-border hover:bg-muted transition-colors"
+                    aria-label="Tarjeta anterior"
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
+                  
+                  {/* Indicadores */}
+                  <div className="flex gap-2">
+                    {cards.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentCard(index)}
+                        className={`h-2 rounded-full transition-all duration-300 ${
+                          index === currentCard 
+                            ? "w-8 bg-teal" 
+                            : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                        }`}
+                        aria-label={`Ir a tarjeta ${index + 1}`}
+                      />
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={nextCard}
+                    className="p-2 rounded-full bg-card border border-border hover:bg-muted transition-colors"
+                    aria-label="Tarjeta siguiente"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Sobre NMHN Pay */}
-        <section className="border-y border-border bg-muted/30 py-12 sm:py-16 md:py-20 lg:py-24">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-            <div className="mx-auto max-w-3xl text-center space-y-4 sm:space-y-6 lg:space-y-8">
-              <h2 className="text-2xl font-bold tracking-tight text-balance sm:text-3xl md:text-4xl lg:text-5xl">Sobre NMHN <span className="text-teal">Pay</span></h2>
-              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed px-2 sm:px-0">
-                NMHN Pay es una plataforma digital creada para apoyar a emprendedores, freelancers y consultores hondureños en la organización de su trabajo y la creación de solicitudes de cobro profesionales. Nuestro enfoque es ofrecer herramientas tecnológicas accesibles que impulsen la actividad comercial sin operar como entidad financiera.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Servicios / Características principales */}
-        <section id="servicios" className="w-full py-12 sm:py-16 md:py-20 lg:py-32 bg-muted/30">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-            <div className="mx-auto max-w-6xl space-y-8 sm:space-y-12">
-            <div className="text-center space-y-3 sm:space-y-4 px-2 sm:px-0">
-              <h2 className="text-2xl font-bold tracking-tight text-balance sm:text-3xl md:text-4xl lg:text-5xl">
-                Todo lo que necesitas para gestionar tus pagos
-              </h2>
-              <p className="mx-auto max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed">
-                Desde enlaces de pago hasta facturas profesionales, tenemos las herramientas perfectas para tu negocio
-              </p>
-            </div>
-
-            <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
-              <Card className="border-border hover:border-teal/50 transition-colors">
-                <CardHeader>
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-teal/10">
-                    <Link2 className="h-6 w-6 text-teal" />
-                  </div>
-                  <CardTitle>Solicitudes digitales <span className="text-xs text-muted-foreground">(Próximamente)</span></CardTitle>
-                  <CardDescription>
-                    Crea solicitudes digitales para tus servicios profesionales. Funcionalidad en desarrollo.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-
-              <Card className="border-border hover:border-teal/50 transition-colors">
-                <CardHeader>
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
-                    <CreditCard className="h-6 w-6 text-accent" />
-                  </div>
-                  <CardTitle>Cobros digitales <span className="text-xs text-muted-foreground">(En desarrollo)</span></CardTitle>
-                  <CardDescription>Funcionalidad en desarrollo. Los cobros se procesarán mediante proveedores externos certificados.</CardDescription>
-                </CardHeader>
-              </Card>
-
-              <Card className="border-border hover:border-teal/50 transition-colors">
-                <CardHeader>
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                    <BarChart3 className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle>Panel profesional <span className="text-xs text-muted-foreground">(Beta)</span></CardTitle>
-                  <CardDescription>
-                    Panel de administración en desarrollo. Próximamente podrás gestionar tus servicios desde un dashboard intuitivo.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-
-              <Card className="border-border hover:border-teal/50 transition-colors">
-                <CardHeader>
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
-                    <Shield className="h-6 w-6 text-accent" />
-                  </div>
-                  <CardTitle>Seguridad</CardTitle>
-                  <CardDescription>Protección avanzada para todas tus transacciones y datos sensibles</CardDescription>
-                </CardHeader>
-              </Card>
-
-              <Card className="border-border hover:border-teal/50 transition-colors">
-                <CardHeader>
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                    <Users className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle>Gestión de servicios</CardTitle>
-                  <CardDescription>
-                    Organiza y administra todos tus servicios y productos desde un solo lugar
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-
-              <Card className="border-border hover:border-teal/50 transition-colors">
-                <CardHeader>
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
-                    <Headphones className="h-6 w-6 text-accent" />
-                  </div>
-                  <CardTitle>Soporte dedicado</CardTitle>
-                  <CardDescription>Equipo de soporte disponible para ayudarte en cada paso del camino</CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Cómo funciona */}
-        <section id="como-funciona" className="border-y border-border bg-muted/30 py-12 sm:py-16 md:py-20 lg:py-24">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-            <div className="space-y-8 sm:space-y-12 lg:space-y-16">
-              <div className="text-center space-y-3 sm:space-y-4 px-2 sm:px-0">
-                <h2 className="text-2xl font-bold tracking-tight text-balance sm:text-3xl md:text-4xl lg:text-5xl animate-text-reveal animation-delay-200">
-                  Cómo funciona
-                </h2>
-                <p className="mx-auto max-w-2xl text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed animate-text-reveal animation-delay-400">
-                  Comienza a cobrar en solo 3 pasos simples
-                </p>
-              </div>
-
-              <div className="grid gap-8 sm:gap-10 lg:gap-12 md:grid-cols-3">
-                <div className="relative animate-slide-in-bottom animation-delay-500">
-                  <div className="space-y-3 sm:space-y-4">
-                    <div className="inline-flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-primary text-xl sm:text-2xl font-bold text-primary-foreground animate-scale-in animation-delay-600">
-                      1
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-bold">Crea tu perfil <span className="text-xs text-muted-foreground">(Próximamente)</span></h3>
-                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                      Próximamente podrás organizar tu información profesional y definir tus servicios.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="relative animate-slide-in-bottom animation-delay-700">
-                  <div className="space-y-3 sm:space-y-4">
-                    <div className="inline-flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-accent text-xl sm:text-2xl font-bold text-accent-foreground animate-scale-in animation-delay-800">
-                      2
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-bold">Genera solicitudes digitales para tus servicios <span className="text-xs text-muted-foreground">(En desarrollo)</span></h3>
-                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                      Funcionalidad en desarrollo. Próximamente podrás crear solicitudes digitales claras y profesionales para tus servicios.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="relative animate-slide-in-bottom animation-delay-900">
-                  <div className="space-y-3 sm:space-y-4">
-                    <div className="inline-flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-primary text-xl sm:text-2xl font-bold text-primary-foreground animate-scale-in animation-delay-1000">
-                      3
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-bold">Activa funciones premium <span className="text-xs text-muted-foreground">(Beta)</span></h3>
-                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                      Funcionalidad en desarrollo. Próximamente podrás mejorar tu experiencia utilizando créditos HNLD para herramientas adicionales.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Créditos digitales (HNLD) */}
-        <section className="w-full py-12 sm:py-16 md:py-20 lg:py-24">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-            <div className="mx-auto max-w-4xl">
-            <Card className="border-border bg-gradient-to-br from-card to-muted/30">
-              <CardHeader className="text-center space-y-3 sm:space-y-4 lg:space-y-6 pb-6 sm:pb-8 lg:pb-10 px-4 sm:px-6 lg:px-8">
-                <div className="mx-auto inline-flex h-12 w-12 sm:h-16 sm:w-16 lg:h-20 lg:w-20 items-center justify-center rounded-full bg-accent/10">
-                  <Coins className="h-6 w-6 sm:h-8 sm:w-8 lg:h-10 lg:w-10 text-accent" />
-                </div>
-                <CardTitle className="text-2xl sm:text-3xl lg:text-4xl">Créditos internos (HNLD)</CardTitle>
-                <CardDescription className="text-sm sm:text-base lg:text-lg">
-                  Accede a funciones premium dentro de la plataforma
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4 sm:space-y-6 lg:space-y-8 px-4 sm:px-6 lg:px-8 pb-6 sm:pb-8 lg:pb-10">
-                <p className="text-center text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  Los HNLD son créditos internos diseñados exclusivamente para activar funciones premium y herramientas adicionales dentro de NMHN Pay. No representan dinero, no pueden canjearse por efectivo, no son divisas ni instrumentos financieros y no tienen valor fuera de la plataforma. Su uso es únicamente funcional dentro de NMHN Pay.
-                </p>
-                <div className="grid gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                  <div className="flex items-start gap-3 rounded-lg border border-border bg-background p-4">
-                    <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-medium">Funciones premium</p>
-                      <p className="text-sm text-muted-foreground">Accede a herramientas avanzadas</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3 rounded-lg border border-border bg-background p-4">
-                    <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-medium">Uso exclusivo</p>
-                      <p className="text-sm text-muted-foreground">Solo dentro del ecosistema NMHN Pay</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3 rounded-lg border border-border bg-background p-4 sm:col-span-2 lg:col-span-1">
-                    <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-medium">Propósito funcional</p>
-                      <p className="text-sm text-muted-foreground">Créditos destinados únicamente a habilitar características digitales</p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Planes / Precios */}
-        <section id="precios" className="border-y border-border bg-muted/30 py-12 sm:py-16 md:py-20 lg:py-24">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-            <div className="space-y-8 sm:space-y-12 lg:space-y-16">
-              <div className="text-center space-y-3 sm:space-y-4 px-2 sm:px-0">
+        {/* Lo que hacemos */}
+        <section id="servicios" className="w-full py-12 sm:py-16 md:py-20 lg:py-32 bg-gradient-to-br from-muted/30 via-background to-muted/20 relative">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(20,184,166,0.05),transparent_50%)]" />
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
+            <div className="mx-auto max-w-4xl space-y-8 sm:space-y-12">
+              <div className="text-center space-y-4 sm:space-y-6">
                 <h2 className="text-2xl font-bold tracking-tight text-balance sm:text-3xl md:text-4xl lg:text-5xl">
-                  Planes y precios
+                  Lo que hacemos
                 </h2>
-                <p className="mx-auto max-w-2xl text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed">
-                  Elige el plan que mejor se adapte a tus necesidades
-                </p>
               </div>
 
-              <div className="grid gap-6 sm:gap-8 lg:gap-10 md:grid-cols-2">
-                <Card className="border-border">
-                  <CardHeader className="space-y-3 sm:space-y-4 px-4 sm:px-6 pt-6 sm:pt-8">
-                    <CardTitle className="text-xl sm:text-2xl">Plan básico <span className="text-xs text-muted-foreground">(Próximamente)</span></CardTitle>
+              <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
+                <div className="p-6 sm:p-8 rounded-xl bg-card border border-border shadow-sm hover:shadow-md transition-shadow group">
+                  <div className="flex items-start gap-4">
+                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-teal/10 shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                      <TrendingUp className="w-6 h-6 text-teal" />
+                    </div>
                     <div className="space-y-2">
-                      <div className="text-3xl sm:text-4xl font-bold">L 0</div>
-                      <p className="text-xs sm:text-sm text-muted-foreground">/ mes</p>
+                      <h3 className="font-semibold text-lg">Soluciones digitales</h3>
+                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        Desarrollamos soluciones digitales centradas en fortalecer la actividad económica moderna.
+                      </p>
                     </div>
-                    <CardDescription className="text-sm">Perfecto para comenzar - Disponible próximamente</CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-4 sm:space-y-6 px-4 sm:px-6 pb-6 sm:pb-8">
-                    <ul className="space-y-2 sm:space-y-3">
-                      <li className="flex items-start gap-2 sm:gap-3">
-                        <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Solicitudes digitales simples <span className="text-muted-foreground italic">(En desarrollo)</span></span>
-                      </li>
-                      <li className="flex items-start gap-2 sm:gap-3">
-                        <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Gestión de actividades <span className="text-muted-foreground italic">(Próximamente)</span></span>
-                      </li>
-                      <li className="flex items-start gap-2 sm:gap-3">
-                        <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Herramientas esenciales <span className="text-muted-foreground italic">(Beta)</span></span>
-                      </li>
-                      <li className="flex items-start gap-2 sm:gap-3">
-                        <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Acceso desde cualquier dispositivo</span>
-                      </li>
-                      <li className="flex items-start gap-2 sm:gap-3">
-                        <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Soporte por correo</span>
-                      </li>
-                    </ul>
-                    <Button 
-                      className="w-full bg-transparent text-sm sm:text-base" 
-                      variant="outline"
-                      onClick={() => setIsConstructionModalOpen(true)}
-                    >
-                      Comenzar gratis
-                    </Button>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-primary shadow-lg">
-                  <CardHeader className="space-y-3 sm:space-y-4 px-4 sm:px-6 pt-6 sm:pt-8">
-                    <div className="inline-flex items-center rounded-full border border-teal/20 bg-teal/10 px-2 py-1 sm:px-3 sm:py-1 text-xs font-medium text-black w-fit">
-                      Más popular
+                  </div>
+                </div>
+                <div className="p-6 sm:p-8 rounded-xl bg-card border border-border shadow-sm hover:shadow-md transition-shadow group">
+                  <div className="flex items-start gap-4">
+                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-blue-500/10 shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                      <Shield className="w-6 h-6 text-blue-500" />
                     </div>
-                    <CardTitle className="text-xl sm:text-2xl">Plan profesional <span className="text-xs text-muted-foreground">(En desarrollo)</span></CardTitle>
                     <div className="space-y-2">
-                      <div className="text-3xl sm:text-4xl font-bold">Funciones premium con HNLD</div>
+                      <h3 className="font-semibold text-lg">Herramientas confiables</h3>
+                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        Ofrecemos herramientas confiables, prácticas y alineadas con las dinámicas del mercado digital, contribuyendo al desarrollo tecnológico de Honduras.
+                      </p>
                     </div>
-                    <CardDescription className="text-sm">Ideal para freelancers activos - Disponible próximamente</CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-4 sm:space-y-6 px-4 sm:px-6 pb-6 sm:pb-8">
-                    <ul className="space-y-2 sm:space-y-3">
-                      <li className="flex items-start gap-2 sm:gap-3">
-                        <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Solicitudes digitales personalizadas <span className="text-muted-foreground italic">(Próximamente)</span></span>
-                      </li>
-                      <li className="flex items-start gap-2 sm:gap-3">
-                        <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Reportes y estadísticas <span className="text-muted-foreground italic">(En desarrollo)</span></span>
-                      </li>
-                      <li className="flex items-start gap-2 sm:gap-3">
-                        <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Funciones premium activadas con HNLD <span className="text-muted-foreground italic">(Beta)</span></span>
-                      </li>
-                      <li className="flex items-start gap-2 sm:gap-3">
-                        <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Mejor organización del perfil <span className="text-muted-foreground italic">(Próximamente)</span></span>
-                      </li>
-                      <li className="flex items-start gap-2 sm:gap-3">
-                        <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm">Soporte prioritario</span>
-                      </li>
-                    </ul>
-                    <Button 
-                      className="w-full bg-primary text-primary-foreground hover:bg-primary/90 text-sm sm:text-base"
-                      onClick={() => setIsConstructionModalOpen(true)}
-                    >
-                      Comenzar ahora
-                    </Button>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Por qué elegirnos */}
-        <section className="w-full py-12 sm:py-16 md:py-20 lg:py-32 xl:py-36">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-            <div className="space-y-8 sm:space-y-12 lg:space-y-16">
-            <div className="text-center space-y-3 sm:space-y-4 px-2 sm:px-0">
-              <h2 className="text-2xl font-bold tracking-tight text-balance sm:text-3xl md:text-4xl lg:text-5xl">
-                Por qué elegir NMHN <span className="text-teal">Pay</span>
-              </h2>
-              <p className="mx-auto max-w-2xl text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed">
-                La solución completa para profesionales hondureños
-              </p>
-              <div className="pt-4">
-                <p className="text-sm text-muted-foreground italic">
-                  Desde Honduras para freelancers 2025 — versión beta
-                </p>
-              </div>
-            </div>
-
-            <div className="grid gap-6 sm:gap-8 lg:gap-10 md:grid-cols-2 lg:grid-cols-3">
-              <div className="space-y-3 sm:space-y-4">
-                <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <Shield className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold">Plataforma segura y confiable</h3>
-              </div>
-
-              <div className="space-y-3 sm:space-y-4">
-                <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg bg-accent/10">
-                  <Zap className="h-5 w-5 sm:h-6 sm:w-6 text-accent" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold">Herramientas modernas</h3>
-              </div>
-
-              <div className="space-y-3 sm:space-y-4">
-                <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <Users className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold">Sin conocimientos técnicos</h3>
-              </div>
-
-              <div className="space-y-3 sm:space-y-4">
-                <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg bg-accent/10">
-                  <BarChart3 className="h-5 w-5 sm:h-6 sm:w-6 text-accent" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold">Interfaz fácil de usar</h3>
-              </div>
-
-              <div className="space-y-3 sm:space-y-4">
-                <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <Coins className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold">Créditos HNLD simples</h3>
-              </div>
-
-              <div className="space-y-3 sm:space-y-4">
-                <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg bg-accent/10">
-                  <CheckCircle2 className="h-5 w-5 sm:h-6 sm:w-6 text-accent" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold">Ideal para freelancers y emprendedores</h3>
-              </div>
-            </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Preguntas frecuentes (FAQ) */}
-        <section id="faq" className="border-y border-border bg-muted/30 py-12 sm:py-16 md:py-20 lg:py-24">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-            <div className="mx-auto max-w-3xl space-y-8 sm:space-y-12 lg:space-y-16">
-              <div className="text-center space-y-3 sm:space-y-4 px-2 sm:px-0">
+        {/* Plataforma en constante desarrollo */}
+        <section id="plataforma-desarrollo" className="border-y border-border bg-gradient-to-b from-background via-teal/5 to-background py-12 sm:py-16 md:py-20 lg:py-24 relative">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
+            <div className="mx-auto max-w-4xl space-y-8 sm:space-y-12">
+              <div className="text-center space-y-4 sm:space-y-6">
                 <h2 className="text-2xl font-bold tracking-tight text-balance sm:text-3xl md:text-4xl lg:text-5xl">
+                  Plataforma en constante desarrollo
+                </h2>
+              </div>
+
+              <div className="space-y-6">
+                <div className="p-6 sm:p-8 rounded-xl bg-card/50 backdrop-blur-sm border border-teal/20 shadow-lg hover:shadow-xl transition-all duration-500 group animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+                  <div className="flex items-start gap-4">
+                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-teal/20 shrink-0 group-hover:scale-110 group-hover:bg-teal/30 transition-all duration-300 animate-pulse" style={{ animationDelay: "0.2s", animationDuration: "2s" }}>
+                      <span className="text-teal font-bold">1</span>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-base sm:text-lg mb-2">Evolución continua</h3>
+                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        Nuestra plataforma evoluciona de forma continua.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-6 sm:p-8 rounded-xl bg-card/50 backdrop-blur-sm border border-teal/20 shadow-lg hover:shadow-xl transition-all duration-500 group animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+                  <div className="flex items-start gap-4">
+                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-teal/20 shrink-0 group-hover:scale-110 group-hover:bg-teal/30 transition-all duration-300 animate-pulse" style={{ animationDelay: "0.4s", animationDuration: "2s" }}>
+                      <span className="text-teal font-bold">2</span>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-base sm:text-lg mb-2">Soluciones para el mercado hondureño</h3>
+                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        Estamos desarrollando soluciones digitales que respondan a las necesidades reales del mercado hondureño y que aporten valor al crecimiento de emprendedores, profesionales y negocios.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-6 sm:p-8 rounded-xl bg-card/50 backdrop-blur-sm border border-teal/20 shadow-lg hover:shadow-xl transition-all duration-500 group animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
+                  <div className="flex items-start gap-4">
+                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-teal/20 shrink-0 group-hover:scale-110 group-hover:bg-teal/30 transition-all duration-300 animate-pulse" style={{ animationDelay: "0.6s", animationDuration: "2s" }}>
+                      <span className="text-teal font-bold">3</span>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-base sm:text-lg mb-2">Enfoque responsable</h3>
+                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        Cada avance se construye con un enfoque responsable, priorizando estabilidad, calidad y una experiencia confiable para los usuarios.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        {/* Preguntas frecuentes */}
+        <section id="faq" className="w-full py-12 sm:py-16 md:py-20 lg:py-32 xl:py-36">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+            <div className="mx-auto max-w-4xl space-y-6 sm:space-y-8">
+              <div className="space-y-3 sm:space-y-4">
+                <h2 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl md:text-5xl text-center">
                   Preguntas frecuentes
                 </h2>
-                <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed">
-                  Encuentra respuestas a las preguntas más comunes
-                </p>
               </div>
 
-              <Accordion type="single" collapsible className="space-y-3 sm:space-y-4">
-                <AccordionItem value="item-1" className="rounded-lg border border-border bg-card px-4 sm:px-6">
-                  <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">¿NMHN Pay procesa pagos directamente?</AccordionTrigger>
-                  <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                    No. NMHN Pay actualmente está en versión beta y aún no procesa pagos reales. Cuando esté disponible, todos los cobros se procesarán mediante proveedores externos certificados PCI-DSS. La plataforma no manejará fondos directamente.
-                  </AccordionContent>
-                </AccordionItem>
+              <div className="prose prose-gray dark:prose-invert max-w-none space-y-6 sm:space-y-8">
+                <Accordion type="single" collapsible className="space-y-3 sm:space-y-4">
+                  <AccordionItem value="item-1" className="rounded-lg border border-border bg-card px-4 sm:px-6">
+                    <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
+                      ¿Qué es NMHN?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-sm sm:text-base text-muted-foreground">
+                      NMHN es una iniciativa tecnológica orientada a impulsar el mercado digital en Honduras. Desarrollamos soluciones y herramientas que buscan facilitar la transición hacia modelos más modernos de comercio, colaboración y presencia en línea, siempre con un enfoque responsable y adaptado a la realidad hondureña.
+                    </AccordionContent>
+                  </AccordionItem>
 
-                <AccordionItem value="item-2" className="rounded-lg border border-border bg-card px-4 sm:px-6">
-                  <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
-                    ¿Qué son los créditos HNLD?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                    Los créditos HNLD son créditos internos, no dinero, y solo para funciones premium. Esta funcionalidad estará disponible próximamente en la versión beta.
-                  </AccordionContent>
-                </AccordionItem>
+                  <AccordionItem value="item-2" className="rounded-lg border border-border bg-card px-4 sm:px-6">
+                    <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
+                      ¿Qué tipo de soluciones desarrollan?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-sm sm:text-base text-muted-foreground">
+                      En NMHN desarrollamos soluciones digitales centradas en fortalecer la actividad económica moderna. Nuestro propósito es ofrecer herramientas confiables, prácticas y alineadas con las dinámicas del mercado digital, contribuyendo al desarrollo tecnológico de Honduras.
+                    </AccordionContent>
+                  </AccordionItem>
 
-                <AccordionItem value="item-3" className="rounded-lg border border-border bg-card px-4 sm:px-6">
-                  <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
-                    ¿Necesito cuenta bancaria?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                    No para el uso básico. Cuando las funcionalidades estén disponibles, los métodos de pago dependerán de los proveedores externos que integremos.
-                  </AccordionContent>
-                </AccordionItem>
+                  <AccordionItem value="item-4" className="rounded-lg border border-border bg-card px-4 sm:px-6">
+                    <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
+                      ¿A quién está dirigida la plataforma?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-sm sm:text-base text-muted-foreground">
+                      Nuestro objetivo es acompañar a emprendedores, profesionales y pequeñas empresas en su camino hacia la economía digital. NETMARKETHN trabaja para fortalecer la economía digital hondureña, conectando a emprendedores, negocios y usuarios con soluciones modernas, accesibles y pensadas para el mercado local.
+                    </AccordionContent>
+                  </AccordionItem>
 
-                <AccordionItem value="item-4" className="rounded-lg border border-border bg-card px-4 sm:px-6">
-                  <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
-                    ¿Puedo retirar dinero?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                    No. NMHN Pay no maneja fondos. La plataforma está en desarrollo y cuando esté disponible, no procesará ni almacenará dinero directamente.
-                  </AccordionContent>
-                </AccordionItem>
+                  <AccordionItem value="item-5" className="rounded-lg border border-border bg-card px-4 sm:px-6">
+                    <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
+                      ¿NMHN es una entidad financiera?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-sm sm:text-base text-muted-foreground">
+                      No. NMHN no es un banco, no ofrece servicios financieros, no realiza transferencias de dinero ni opera como pasarela. Nuestro enfoque está en el desarrollo de tecnología y herramientas digitales para fortalecer el mercado digital hondureño.
+                    </AccordionContent>
+                  </AccordionItem>
 
-                <AccordionItem value="item-5" className="rounded-lg border border-border bg-card px-4 sm:px-6">
-                  <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
-                    ¿Qué métodos de pago aceptan?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                    Cuando la plataforma esté disponible, los métodos de pago dependerán exclusivamente de proveedores externos certificados. NMHN Pay nunca procesará pagos directamente dentro de la plataforma.
-                  </AccordionContent>
-                </AccordionItem>
+                  <AccordionItem value="item-7" className="rounded-lg border border-border bg-card px-4 sm:px-6">
+                    <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
+                      ¿Cómo protege NMHN la información de los usuarios?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-sm sm:text-base text-muted-foreground">
+                      Tratamos la seguridad y privacidad con seriedad. La información proporcionada por los usuarios se maneja bajo políticas de privacidad que cumplen buenas prácticas y solo se utiliza con fines operativos y administrativos. Priorizamos estabilidad, calidad y una experiencia confiable.
+                    </AccordionContent>
+                  </AccordionItem>
 
-                <AccordionItem value="item-6" className="rounded-lg border border-border bg-card px-4 sm:px-6">
-                  <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
-                    ¿Es seguro?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                    Sí, implementaremos buenas prácticas web y cifrado en tránsito. La plataforma está en desarrollo activo y se enfocará en la seguridad desde el inicio.
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+                  <AccordionItem value="item-8" className="rounded-lg border border-border bg-card px-4 sm:px-6">
+                    <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
+                      ¿Cómo puedo contactar al equipo de NMHN?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-sm sm:text-base text-muted-foreground">
+                      Puedes contactarnos a través de{" "}
+                      <a href="mailto:info@netmarkethn.com" className="text-teal hover:underline">
+                        info@netmarkethn.com
+                      </a>
+                      {" "}o visitando nuestra sección de contacto. Nuestro equipo estará disponible para atender consultas relacionadas con NMHN o el desarrollo de herramientas.
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* CTA Final */}
-        <section className="w-full py-12 sm:py-16 md:py-20 lg:py-32 xl:py-36">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-            <div className="mx-auto max-w-4xl">
-            <Card className="border-border bg-gradient-to-br from-primary/5 via-card to-teal/10">
-              <CardContent className="p-6 sm:p-8 md:p-12 lg:p-16 text-center space-y-4 sm:space-y-6 lg:space-y-8">
-                <h2 className="text-2xl font-bold tracking-tight text-balance sm:text-3xl md:text-4xl lg:text-5xl">
-                  Impulsa tu trabajo con herramientas diseñadas para ti
-                </h2>
-                <p className="mx-auto max-w-2xl text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed px-2 sm:px-0">
-                  Próximamente podrás organizar tus servicios, enviar solicitudes profesionales y activar funciones premium cuando las necesites. Estamos trabajando para ofrecerte la mejor experiencia.
-                </p>
-                <div className="flex flex-col gap-3 sm:gap-4 sm:flex-row sm:justify-center pt-2">
-                  <Button 
-                    size="lg" 
-                    className="w-full sm:w-auto bg-teal text-teal-foreground hover:bg-teal/90"
-                    onClick={() => setIsConstructionModalOpen(true)}
-                  >
-                    Comienza ahora
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-            </div>
-          </div>
-        </section>
+
       </main>
 
       <Footer />
@@ -561,7 +404,7 @@ export default function HomePage() {
               Sección en construcción
             </DialogTitle>
             <DialogDescription className="text-center text-base">
-              Estamos trabajando en esta funcionalidad. Pronto estará disponible para que puedas comenzar a usar NMHN Pay.
+              Estamos trabajando en esta funcionalidad. Pronto estará disponible.
             </DialogDescription>
           </DialogHeader>
           <div className="mt-4 flex justify-center">
@@ -574,6 +417,63 @@ export default function HomePage() {
           </div>
         </DialogContent>
       </Dialog>
+
+      <style jsx>{`
+        @keyframes bounce-slow {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-8px);
+          }
+        }
+
+        @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
+        .animate-bounce-slow {
+          animation: bounce-slow 3s ease-in-out infinite;
+        }
+
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes fade-in-up {
+          0% {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-spin-slow {
+          animation: spin-slow 8s linear infinite;
+        }
+
+        .animate-fade-in-up {
+          animation: fade-in-up 0.6s ease-out forwards;
+          opacity: 0;
+        }
+      `}</style>
     </div>
   )
 }

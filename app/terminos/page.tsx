@@ -2,8 +2,8 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
 export const metadata = {
-  title: "Términos y condiciones - NMHN Pay",
-  description: "Términos y condiciones de uso de la plataforma NMHN Pay",
+  title: "Términos y condiciones - NMHN",
+  description: "Términos y condiciones de uso de la plataforma NMHN",
 }
 
 export default function TerminosPage() {
@@ -18,8 +18,7 @@ export default function TerminosPage() {
               <div className="space-y-3 sm:space-y-4">
                 <h1 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl md:text-5xl">Términos y condiciones</h1>
                 <p className="text-sm sm:text-base text-muted-foreground">
-                  Última actualización:{" "}
-                  {new Date().toLocaleDateString("es-HN", { year: "numeric", month: "long", day: "numeric" })}
+                  Última actualización: 28 de noviembre de 2025
                 </p>
               </div>
 
@@ -27,167 +26,182 @@ export default function TerminosPage() {
                 <section className="space-y-3 sm:space-y-4">
                   <h2 className="text-xl sm:text-2xl font-bold">1. Aceptación de los términos</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Al acceder y utilizar NMHN Pay ("la Plataforma"), usted acepta estos Términos y Condiciones. Si no está de acuerdo con ellos, debe abstenerse de utilizar nuestros servicios.
+                    Al acceder o utilizar NMHN ("la plataforma"), usted confirma que ha leído, comprendido y aceptado estos términos y condiciones. Si no está de acuerdo con alguno de los apartados, no debe utilizar la plataforma.
                   </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">2. Descripción del servicio</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold">2. Naturaleza y propósito de la plataforma</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    NMHN Pay es una plataforma digital que proporciona herramientas para apoyar a emprendedores, freelancers y consultores hondureños en la gestión de cobros electrónicos, creación de enlaces de pago y administración digital de sus servicios profesionales.
+                    NMHN es una plataforma digital en constante desarrollo cuyo propósito es contribuir al fortalecimiento del mercado digital en Honduras mediante la creación de herramientas tecnológicas dirigidas a emprendedores, profesionales y negocios.
                   </p>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    NMHN Pay no es una entidad financiera, no ofrece servicios bancarios, no opera como billetera electrónica, no realiza cambio de divisas ni presta servicios de envío de dinero.
-                  </p>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    La plataforma ofrece funciones digitales y herramientas tecnológicas que complementan la actividad comercial de sus usuarios.
-                  </p>
-                </section>
-
-                <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">3. Registro y cuenta de usuario</h2>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Para acceder a determinadas funciones, usted debe crear una cuenta proporcionando información veraz, actual y completa.
-                  </p>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Usted es responsable de preservar la confidencialidad de su cuenta y de cualquier actividad que se realice desde ella.
-                  </p>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Nos reservamos el derecho de rechazar o suspender cuentas que presenten información falsa, actividad irregular o uso indebido de la plataforma.
-                  </p>
-                </section>
-
-                <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">4. Uso aceptable</h2>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    El usuario se compromete a utilizar NMHN Pay de forma legal y conforme a estos Términos.
-                  </p>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Está estrictamente prohibido:
+                    La plataforma se limita a funciones digitales y tecnológicas. NMHN no es una entidad financiera y no realiza actividades reguladas como:
                   </p>
                   <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
-                    <li>utilizar la plataforma para actividades fraudulentas o engañosas,</li>
-                    <li>solicitar pagos por servicios ilegales,</li>
-                    <li>vulnerar derechos de propiedad intelectual de terceros,</li>
-                    <li>interferir con el funcionamiento técnico de la plataforma.</li>
+                    <li>administración de fondos,</li>
+                    <li>servicios bancarios,</li>
+                    <li>transferencias de dinero,</li>
+                    <li>procesamiento de pagos,</li>
+                    <li>operación como pasarela de pago,</li>
+                    <li>oferta de productos financieros.</li>
                   </ul>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    NMHN Pay podrá suspender temporal o permanentemente cuentas involucradas en actividades sospechosas o no autorizadas.
+                    Cualquier funcionalidad futura estará orientada exclusivamente al desarrollo tecnológico.
                   </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">5. Créditos digitales HNLD</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold">3. Cuentas de usuario</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Los HNLD son créditos digitales internos, exclusivos para activar funciones premium, herramientas adicionales y servicios digitales dentro del ecosistema NMHN Pay.
+                    Algunas funciones pueden requerir un registro. El usuario deberá proporcionar información exacta, completa y actualizada.
                   </p>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Los créditos:
+                    El usuario es responsable de:
                   </p>
                   <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
-                    <li>no representan dinero,</li>
-                    <li>no son divisas ni instrumentos financieros,</li>
-                    <li>no tienen valor fuera de la plataforma,</li>
-                    <li>no son reembolsables,</li>
-                    <li>no pueden canjearse por dinero ni transferirse hacia terceros sistemas o plataformas.</li>
+                    <li>la confidencialidad de sus credenciales,</li>
+                    <li>el uso realizado desde su cuenta,</li>
+                    <li>notificar accesos no autorizados.</li>
                   </ul>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    El usuario entiende que los créditos tienen únicamente un propósito funcional dentro de NMHN Pay.
+                    NMHN puede suspender o restringir cuentas que presenten información falsa, uso indebido o actividad sospechosa.
                   </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">6. Pagos y comisiones</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold">4. Uso permitido de la plataforma</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    La plataforma podrá aplicar tarifas por el uso de determinadas funciones o por el procesamiento de cobros electrónicos mediante servicios externos de pagos.
+                    El usuario se compromete a utilizar NMHN de forma responsable y conforme a la ley.
                   </p>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Las comisiones aplicables se mostrarán claramente antes de completar una acción.
+                    No está permitido:
                   </p>
+                  <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
+                    <li>realizar actividades ilícitas, fraudulentas o engañosas,</li>
+                    <li>publicar contenido ofensivo, ilegal o no autorizado,</li>
+                    <li>infringir derechos de propiedad intelectual,</li>
+                    <li>manipular o interferir con el funcionamiento técnico de la plataforma,</li>
+                    <li>intentar acceder a funciones restringidas sin autorización.</li>
+                  </ul>
+                </section>
+
+                <section className="space-y-3 sm:space-y-4">
+                  <h2 className="text-xl sm:text-2xl font-bold">5. Evolución y alcance de la plataforma</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    NMHN Pay se reserva el derecho de actualizar tarifas previo aviso.
+                    NMHN se encuentra en desarrollo continuo. Por ello, la plataforma podrá:
                   </p>
+                  <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
+                    <li>modificar o mejorar funcionalidades,</li>
+                    <li>introducir nuevas herramientas,</li>
+                    <li>retirar características temporal o permanentemente,</li>
+                    <li>mantener funciones en fase beta o acceso limitado,</li>
+                    <li>actualizar estructura, contenido o diseño sin previo aviso.</li>
+                  </ul>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Cuando procesamos cobros a través de proveedores externos (por ejemplo, pasarelas de pago), usted acepta cumplir también los términos del proveedor correspondiente.
+                    Toda descripción pública tiene carácter informativo y no garantiza disponibilidad permanente.
                   </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">7. Propiedad intelectual</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold">6. Servicios internos y condiciones adicionales</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Toda la información, diseño, interfaz, software, logotipos, marcas y contenido disponible en NMHN Pay son propiedad exclusiva de la empresa o de sus licenciantes y están protegidos por leyes de propiedad intelectual.
+                    Algunas funciones avanzadas o internas —accesibles únicamente a usuarios registrados— pueden estar sujetas a términos específicos adicionales.
                   </p>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Queda prohibida la copia, distribución o modificación no autorizada.
+                    Si existiera discrepancia entre los términos generales y los términos específicos de una funcionalidad, prevalecerán los términos adicionales.
                   </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">8. Limitación de responsabilidad</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold">7. Funcionalidades premium y costos</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    NMHN Pay se ofrece "tal cual", sin garantías expresas o implícitas.
+                    En caso de incorporar funciones o herramientas premium, NMHN informará claramente los costos antes de su utilización.
                   </p>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    No garantizamos ausencia de errores, disponibilidad continua ni resultados específicos derivados del uso de la plataforma.
+                    NMHN podrá actualizar precios, requisitos o condiciones de uso cuando sea necesario.
                   </p>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    NMHN Pay no será responsable por:
+                    Si se utilizan proveedores externos, el usuario deberá aceptar sus respectivos términos.
+                  </p>
+                </section>
+
+                <section className="space-y-3 sm:space-y-4">
+                  <h2 className="text-xl sm:text-2xl font-bold">8. Contenido generado por el usuario</h2>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    El usuario es el único responsable del contenido que publique o comparta dentro de la plataforma.
+                  </p>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    NMHN podrá restringir, moderar o eliminar contenido que:
+                  </p>
+                  <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
+                    <li>viole estos términos,</li>
+                    <li>sea inapropiado, ofensivo o ilegal,</li>
+                    <li>afecte la seguridad o integridad de la plataforma.</li>
+                  </ul>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    El usuario declara poseer los derechos necesarios sobre el contenido que publica.
+                  </p>
+                </section>
+
+                <section className="space-y-3 sm:space-y-4">
+                  <h2 className="text-xl sm:text-2xl font-bold">9. Propiedad intelectual</h2>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    Todos los elementos de NMHN, incluyendo software, diseño, logotipos, textos y materiales visuales, son propiedad de la empresa o sus licenciantes.
+                  </p>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    Queda prohibido reproducir, distribuir, modificar o utilizar estos elementos sin autorización previa.
+                  </p>
+                </section>
+
+                <section className="space-y-3 sm:space-y-4">
+                  <h2 className="text-xl sm:text-2xl font-bold">10. Limitación de responsabilidad</h2>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    La plataforma se ofrece "tal cual", sin garantías expresas o implícitas.
+                  </p>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    NMHN no será responsable por:
                   </p>
                   <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
                     <li>pérdidas económicas,</li>
-                    <li>daños indirectos,</li>
-                    <li>fallos tecnológicos,</li>
-                    <li>interrupciones de terceros proveedores de pago,</li>
-                    <li>uso indebido por parte de los usuarios.</li>
-                  </ul>
-                </section>
-
-                <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">9. Modificaciones de los términos</h2>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Podemos modificar estos Términos en cualquier momento.
-                  </p>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    La versión actualizada siempre estará disponible en la plataforma.
-                  </p>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    El uso continuo de NMHN Pay después de una modificación implica la aceptación de los nuevos términos.
-                  </p>
-                </section>
-
-                <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">10. Suspensión o terminación</h2>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Podemos suspender o finalizar el acceso de un usuario si detectamos:
-                  </p>
-                  <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
-                    <li>violaciones a los Términos,</li>
-                    <li>actividades sospechosas,</li>
-                    <li>comportamiento fraudulento,</li>
+                    <li>daños indirectos o consecuenciales,</li>
+                    <li>fallos técnicos de terceros,</li>
+                    <li>decisiones comerciales o personales del usuario,</li>
+                    <li>accesos no autorizados,</li>
                     <li>uso indebido de la plataforma.</li>
                   </ul>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    La suspensión puede ser temporal o permanente, según la gravedad.
+                    El usuario utiliza NMHN bajo su propio criterio y responsabilidad.
                   </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">11. Ley aplicable</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold">11. Actualización de los términos</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Estos Términos se regirán por las leyes de la República de Honduras.
+                    NMHN puede modificar estos términos en cualquier momento. La versión vigente estará disponible en la plataforma.
                   </p>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Cualquier conflicto será resuelto en los tribunales hondureños competentes.
+                    El uso continuado implica aceptación de las modificaciones.
                   </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">12. Contacto</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold">12. Suspensión o cancelación de acceso</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Para consultas relacionadas con estos Términos y Condiciones, puede escribirnos a:
+                    NMHN podrá suspender temporal o permanentemente el acceso de un usuario si detecta:
                   </p>
+                  <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
+                    <li>incumplimiento de estos términos,</li>
+                    <li>comportamiento inapropiado,</li>
+                    <li>actividad fraudulenta o sospechosa,</li>
+                    <li>violación de derechos de terceros.</li>
+                  </ul>
+                </section>
+
+                <section className="space-y-3 sm:space-y-4">
+                  <h2 className="text-xl sm:text-2xl font-bold">13. Legislación aplicable</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    📧 <a href="mailto:info@netmarkethn.com" className="text-teal hover:underline">info@netmarkethn.com</a>
+                    Estos términos se rigen por las leyes de la República de Honduras. Cualquier disputa será resuelta ante los tribunales competentes.
                   </p>
                 </section>
               </div>
