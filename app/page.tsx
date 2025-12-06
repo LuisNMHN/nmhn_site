@@ -256,7 +256,6 @@ export default function HomePage() {
 
         {/* Plataforma en constante desarrollo */}
         <section id="plataforma-desarrollo" className="border-y border-border bg-gradient-to-b from-background via-teal/5 to-background py-12 sm:py-16 md:py-20 lg:py-24 relative">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
             <div className="mx-auto max-w-4xl space-y-8 sm:space-y-12">
               <div className="text-center space-y-4 sm:space-y-6">
