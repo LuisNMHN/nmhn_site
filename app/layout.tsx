@@ -19,16 +19,16 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/favicon-32x32.png",
+        url: "/favicon-32x32.png?v=2",
         sizes: "32x32",
         type: "image/png",
       },
       {
-        url: "/favicon.ico",
+        url: "/favicon.ico?v=2",
       },
     ],
-    shortcut: "/favicon-32x32.png",
-    apple: "/favicon-32x32.png",
+    shortcut: "/favicon-32x32.png?v=2",
+    apple: "/favicon-32x32.png?v=2",
   },
 }
 
@@ -47,6 +47,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2" />
+        <link rel="shortcut icon" href="/favicon-32x32.png?v=2" />
+        <link rel="apple-touch-icon" sizes="32x32" href="/favicon-32x32.png?v=2" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
+      </head>
       <body className={`font-sans antialiased`}>
         {children}
         <ScrollToTop />
