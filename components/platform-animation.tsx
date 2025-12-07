@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { 
   Zap, 
   Users, 
@@ -101,10 +102,17 @@ export function PlatformAnimation() {
             <div className="absolute inset-2 rounded-full border border-teal/20 animate-spin-slow-reverse" />
           </div>
 
-          {/* Letra N central */}
+          {/* Logo NMHN central */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-teal/20 to-teal/10 flex items-center justify-center backdrop-blur-sm">
-              <span className="text-3xl sm:text-4xl font-bold text-teal animate-pulse">N</span>
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center overflow-hidden">
+              <Image
+                src="/android-chrome-512x512.png"
+                alt="NMHN Logo"
+                width={80}
+                height={80}
+                className="w-full h-full object-cover rounded-full"
+                priority
+              />
             </div>
           </div>
         </div>

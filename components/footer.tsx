@@ -75,12 +75,22 @@ export function Footer() {
               <li>
                 <p className="text-muted-foreground">soporte@netmarkethn.com</p>
               </li>
+              <li>
+                <p className="text-muted-foreground leading-relaxed">
+                  30 N Gould St Ste R<br />
+                  Sheridan, WY 82801<br />
+                  United States
+                </p>
+              </li>
             </ul>
           </div>
         </div>
 
                 <div className="mt-8 sm:mt-12 border-t border-border pt-6 sm:pt-8 space-y-2 text-center text-xs sm:text-sm text-muted-foreground">
                   <p>&copy; 2025 NETMARKETHN LLC. Todos los derechos reservados.</p>
+                  <p className="text-[10px] sm:text-xs text-muted-foreground/70 max-w-4xl mx-auto leading-relaxed">
+                    NMHN es una empresa tecnológica. No ofrece servicios financieros, no procesa pagos y no administra fondos de terceros. Toda la información y funcionalidades presentadas tienen fines exclusivamente digitales.
+                  </p>
                 </div>
       </div>
     </footer>
