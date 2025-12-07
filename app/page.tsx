@@ -87,7 +87,7 @@ export default function HomePage() {
                   Impulsando el mercado digital de Honduras
                 </h1>
                 <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed text-pretty animate-text-reveal animation-delay-400">
-                  NETMARKETHN es una empresa tecnológica que trabaja para fortalecer la economía digital hondureña, conectando a emprendedores, negocios y usuarios con soluciones modernas, accesibles y pensadas para el mercado local.
+                  En NETMARKETHN desarrollamos herramientas digitales orientadas a fortalecer la presencia en línea de emprendedores y negocios en Honduras. Creamos soluciones tecnológicas modernas, seguras y adaptadas al entorno digital local.
                 </p>
                 <div className="flex flex-col gap-3 sm:gap-4 sm:flex-row animate-slide-in-left animation-delay-600 pt-2">
                   <Button 
@@ -133,6 +133,9 @@ export default function HomePage() {
             <div className="mx-auto max-w-4xl space-y-8 sm:space-y-12">
               <div className="text-center space-y-4 sm:space-y-6">
                 <h2 className="text-2xl font-bold tracking-tight text-balance sm:text-3xl md:text-4xl lg:text-5xl">Sobre nosotros</h2>
+                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto px-4">
+                  Somos una empresa tecnológica dedicada al diseño y desarrollo de soluciones digitales. Nos enfocamos en crear herramientas simples, modernas y funcionales que respondan a las necesidades del mercado hondureño. Nuestro compromiso es impulsar un ecosistema digital más accesible y eficiente.
+                </p>
               </div>
               <div className="relative max-w-2xl mx-auto">
                 {/* Carrusel */}
@@ -231,7 +234,7 @@ export default function HomePage() {
                     <div className="space-y-2">
                       <h3 className="font-semibold text-lg">Soluciones digitales</h3>
                       <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                        Desarrollamos soluciones digitales centradas en fortalecer la actividad económica moderna.
+                        Diseñamos soluciones digitales orientadas a fortalecer la presencia y operación de emprendedores y negocios en el entorno digital moderno.
                       </p>
                     </div>
                   </div>
@@ -244,7 +247,7 @@ export default function HomePage() {
                     <div className="space-y-2">
                       <h3 className="font-semibold text-lg">Herramientas confiables</h3>
                       <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                        Ofrecemos herramientas confiables, prácticas y alineadas con las dinámicas del mercado digital, contribuyendo al desarrollo tecnológico de Honduras.
+                        Desarrollamos herramientas prácticas y seguras, alineadas con las necesidades del mercado digital hondureño y pensadas para facilitar procesos cotidianos.
                       </p>
                     </div>
                   </div>
@@ -262,12 +265,15 @@ export default function HomePage() {
                 <h2 className="text-2xl font-bold tracking-tight text-balance sm:text-3xl md:text-4xl lg:text-5xl">
                   Plataforma en constante desarrollo
                 </h2>
+                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto px-4">
+                  Nuestros servicios están orientados a generar herramientas digitales para facilitar procesos relacionados con el entorno digital hondureño. Nuestro objetivo es ofrecer soluciones prácticas y confiables que apoyen el trabajo diario de emprendedores y profesionales.
+                </p>
               </div>
 
               <div className="space-y-6">
                 <div className="p-6 sm:p-8 rounded-xl bg-card/50 backdrop-blur-sm border border-teal/20 shadow-lg hover:shadow-xl transition-all duration-500 group animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
                   <div className="flex items-start gap-4">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-teal/20 shrink-0 group-hover:scale-110 group-hover:bg-teal/30 transition-all duration-300 animate-pulse" style={{ animationDelay: "0.2s", animationDuration: "2s" }}>
+                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-teal/20 shrink-0 group-hover:scale-110 group-hover:bg-teal/30 transition-all duration-300 animate-number-pulse" style={{ animationDelay: "0.3s", animationDuration: "2s" }}>
                       <span className="text-teal font-bold">1</span>
                     </div>
                     <div>
@@ -281,7 +287,7 @@ export default function HomePage() {
 
                 <div className="p-6 sm:p-8 rounded-xl bg-card/50 backdrop-blur-sm border border-teal/20 shadow-lg hover:shadow-xl transition-all duration-500 group animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
                   <div className="flex items-start gap-4">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-teal/20 shrink-0 group-hover:scale-110 group-hover:bg-teal/30 transition-all duration-300 animate-pulse" style={{ animationDelay: "0.4s", animationDuration: "2s" }}>
+                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-teal/20 shrink-0 group-hover:scale-110 group-hover:bg-teal/30 transition-all duration-300 animate-number-pulse" style={{ animationDelay: "0.8s", animationDuration: "2s" }}>
                       <span className="text-teal font-bold">2</span>
                     </div>
                     <div>
@@ -295,7 +301,7 @@ export default function HomePage() {
 
                 <div className="p-6 sm:p-8 rounded-xl bg-card/50 backdrop-blur-sm border border-teal/20 shadow-lg hover:shadow-xl transition-all duration-500 group animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
                   <div className="flex items-start gap-4">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-teal/20 shrink-0 group-hover:scale-110 group-hover:bg-teal/30 transition-all duration-300 animate-pulse" style={{ animationDelay: "0.6s", animationDuration: "2s" }}>
+                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-teal/20 shrink-0 group-hover:scale-110 group-hover:bg-teal/30 transition-all duration-300 animate-number-pulse" style={{ animationDelay: "1.3s", animationDuration: "2s" }}>
                       <span className="text-teal font-bold">3</span>
                     </div>
                     <div>
@@ -464,12 +470,32 @@ export default function HomePage() {
           }
         }
 
+        @keyframes number-pulse {
+          0% {
+            opacity: 0;
+            transform: scale(0.5);
+          }
+          50% {
+            opacity: 1;
+            transform: scale(1.1);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
         .animate-spin-slow {
           animation: spin-slow 8s linear infinite;
         }
 
         .animate-fade-in-up {
           animation: fade-in-up 0.6s ease-out forwards;
+          opacity: 0;
+        }
+
+        .animate-number-pulse {
+          animation: number-pulse 0.6s ease-out forwards;
           opacity: 0;
         }
       `}</style>
