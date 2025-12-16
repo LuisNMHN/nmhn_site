@@ -18,7 +18,7 @@ export default function PrivacidadPage() {
               <div className="space-y-3 sm:space-y-4">
                 <h1 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl md:text-5xl">Política de privacidad</h1>
                 <p className="text-sm sm:text-base text-muted-foreground">
-                  Última actualización: 28/11/2025
+                  Última actualización: {new Date().toLocaleDateString('es-HN', { year: 'numeric', month: 'long', day: 'numeric' })}
                 </p>
               </div>
 
@@ -26,71 +26,56 @@ export default function PrivacidadPage() {
                 <section className="space-y-3 sm:space-y-4">
                   <h2 className="text-xl sm:text-2xl font-bold">1. Introducción</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    En NMHN respetamos la privacidad de nuestros usuarios y trabajamos para asegurar un manejo responsable, transparente y seguro de la información personal.
+                    En NMHN respetamos la privacidad de nuestros clientes y usuarios. Esta política explica cómo recopilamos, utilizamos, almacenamos y protegemos la información personal relacionada con nuestros servicios de desarrollo de software, servicios web y soluciones digitales.
                   </p>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Esta política explica cómo recopilamos, utilizamos, almacenamos y protegemos los datos relacionados con su uso de la plataforma, así como los derechos que usted tiene sobre dicha información.
-                  </p>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    NMHN es una plataforma digital en desarrollo orientada a fortalecer el mercado digital en Honduras mediante la creación de herramientas tecnológicas.
-                  </p>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    No somos una entidad financiera y la información recopilada se utiliza únicamente con fines operativos, administrativos y de mejora del servicio.
+                    NMHN es una empresa tecnológica especializada en desarrollo de software y servicios digitales. Toda la información recopilada se utiliza únicamente con fines operativos, administrativos y de mejora de nuestros servicios.
                   </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
                   <h2 className="text-xl sm:text-2xl font-bold">2. Información que recopilamos</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Podemos recopilar diferentes tipos de información dependiendo de cómo interactúe con la plataforma.
+                    Recopilamos información necesaria para proporcionar nuestros servicios y mejorar la experiencia del cliente:
                   </p>
                   
                   <div className="space-y-3 sm:space-y-4">
                     <div>
-                      <h3 className="text-base sm:text-lg font-semibold mb-2">a) Datos de identificación</h3>
+                      <h3 className="text-base sm:text-lg font-semibold mb-2">a) Información de contacto y comercial</h3>
                       <ul className="list-disc pl-5 sm:pl-6 space-y-1 text-sm sm:text-base text-muted-foreground">
-                        <li>nombre completo</li>
-                        <li>correo electrónico</li>
-                        <li>número telefónico (opcional)</li>
+                        <li>Nombre completo o razón social</li>
+                        <li>Correo electrónico</li>
+                        <li>Número telefónico</li>
+                        <li>Dirección física (cuando sea necesario para facturación)</li>
+                        <li>Información fiscal (para facturación)</li>
                       </ul>
                     </div>
 
                     <div>
-                      <h3 className="text-base sm:text-lg font-semibold mb-2">b) Información de cuenta</h3>
+                      <h3 className="text-base sm:text-lg font-semibold mb-2">b) Información del proyecto</h3>
                       <ul className="list-disc pl-5 sm:pl-6 space-y-1 text-sm sm:text-base text-muted-foreground">
-                        <li>configuraciones de usuario</li>
-                        <li>preferencias de uso</li>
-                        <li>información del perfil (cuando corresponda)</li>
+                        <li>Requisitos y especificaciones del proyecto</li>
+                        <li>Documentación y materiales proporcionados por el cliente</li>
+                        <li>Comunicaciones y correspondencia relacionada con el proyecto</li>
+                        <li>Historial de cambios y modificaciones solicitadas</li>
                       </ul>
                     </div>
 
                     <div>
-                      <h3 className="text-base sm:text-lg font-semibold mb-2">c) Actividad dentro de la plataforma</h3>
+                      <h3 className="text-base sm:text-lg font-semibold mb-2">c) Información técnica</h3>
                       <ul className="list-disc pl-5 sm:pl-6 space-y-1 text-sm sm:text-base text-muted-foreground">
-                        <li>registros de uso</li>
-                        <li>historial de navegación interna</li>
-                        <li>datos asociados a herramientas o funciones utilizadas</li>
-                      </ul>
-                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-2">
-                        (sin incluir información financiera, ya que NMHN no procesa pagos)
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-base sm:text-lg font-semibold mb-2">d) Información técnica</h3>
-                      <ul className="list-disc pl-5 sm:pl-6 space-y-1 text-sm sm:text-base text-muted-foreground">
-                        <li>dirección IP</li>
-                        <li>tipo y versión del navegador</li>
-                        <li>sistema operativo</li>
-                        <li>identificadores únicos del dispositivo</li>
-                        <li>datos relacionados con rendimiento, tiempos de carga y uso general</li>
+                        <li>Dirección IP</li>
+                        <li>Tipo y versión del navegador</li>
+                        <li>Sistema operativo</li>
+                        <li>Registros de acceso a sistemas desarrollados</li>
+                        <li>Datos de rendimiento y uso de aplicaciones desarrolladas</li>
                       </ul>
                     </div>
 
                     <div>
-                      <h3 className="text-base sm:text-lg font-semibold mb-2">e) Información asociada a funcionalidades futuras</h3>
+                      <h3 className="text-base sm:text-lg font-semibold mb-2">d) Información de pago</h3>
                       <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                        Cualquier información adicional será solicitada únicamente cuando sea necesaria y siempre con su consentimiento previo.
+                        Para procesar pagos, podemos recopilar información de facturación. Los datos de tarjetas de crédito son procesados por proveedores de pago seguros y no se almacenan en nuestros servidores.
                       </p>
                     </div>
                   </div>
@@ -102,69 +87,51 @@ export default function PrivacidadPage() {
                     Utilizamos la información recopilada para:
                   </p>
                   <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
-                    <li>operar y mejorar la plataforma,</li>
-                    <li>personalizar la experiencia del usuario,</li>
-                    <li>administrar cuentas y configuraciones,</li>
-                    <li>garantizar la seguridad del sistema,</li>
-                    <li>analizar métricas de rendimiento,</li>
-                    <li>atender solicitudes de soporte,</li>
-                    <li>cumplir con obligaciones legales,</li>
-                    <li>enviar comunicaciones relevantes (solo con consentimiento previo para fines no esenciales).</li>
+                    <li>Proporcionar y mejorar nuestros servicios de desarrollo</li>
+                    <li>Comunicarnos con clientes sobre proyectos y servicios</li>
+                    <li>Procesar pagos y gestionar facturación</li>
+                    <li>Proporcionar soporte técnico y mantenimiento</li>
+                    <li>Cumplir con obligaciones legales y contractuales</li>
+                    <li>Analizar y mejorar nuestros procesos de desarrollo</li>
+                    <li>Enviar comunicaciones relevantes sobre servicios (solo con consentimiento para marketing)</li>
                   </ul>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    En ningún caso utilizamos la información para evaluar solvencia financiera, realizar análisis crediticios o brindar servicios financieros.
-                  </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
                   <h2 className="text-xl sm:text-2xl font-bold">4. Cómo compartimos su información</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Su información no se vende, alquila ni comercializa.
-                  </p>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Podemos compartirla únicamente bajo las siguientes circunstancias:
+                    Su información no se vende, alquila ni comercializa. Podemos compartirla únicamente bajo las siguientes circunstancias:
                   </p>
                   
                   <div className="space-y-3 sm:space-y-4">
                     <div>
                       <h3 className="text-base sm:text-lg font-semibold mb-2">a) Proveedores de servicios</h3>
                       <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-2">
-                        Para operar la plataforma utilizamos empresas especializadas en:
+                        Utilizamos empresas especializadas en:
                       </p>
                       <ul className="list-disc pl-5 sm:pl-6 space-y-1 text-sm sm:text-base text-muted-foreground">
-                        <li>infraestructura en la nube,</li>
-                        <li>servicios de seguridad informática,</li>
-                        <li>análisis de uso,</li>
-                        <li>servicios de correo y soporte técnico.</li>
+                        <li>Infraestructura en la nube y hosting</li>
+                        <li>Servicios de seguridad informática</li>
+                        <li>Procesamiento de pagos</li>
+                        <li>Servicios de correo y comunicación</li>
+                        <li>Herramientas de desarrollo y gestión de proyectos</li>
                       </ul>
                       <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-2">
-                        Estos proveedores procesan datos siguiendo instrucciones estrictas de NMHN.
+                        Estos proveedores procesan datos siguiendo instrucciones estrictas de NMHN y están obligados a mantener la confidencialidad.
                       </p>
                     </div>
 
                     <div>
-                      <h3 className="text-base sm:text-lg font-semibold mb-2">b) Integraciones externas futuras</h3>
+                      <h3 className="text-base sm:text-lg font-semibold mb-2">b) Cumplimiento legal</h3>
                       <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                        Si una funcionalidad futura requiere interacción con servicios externos, se informará previamente al usuario.
+                        Podemos divulgar información cuando sea requerido por órdenes judiciales, solicitudes de autoridades competentes u obligaciones legales aplicables.
                       </p>
                     </div>
 
                     <div>
-                      <h3 className="text-base sm:text-lg font-semibold mb-2">c) Cumplimiento legal</h3>
+                      <h3 className="text-base sm:text-lg font-semibold mb-2">c) Con su consentimiento</h3>
                       <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                        Podemos divulgar información cuando sea requerido por:
-                      </p>
-                      <ul className="list-disc pl-5 sm:pl-6 space-y-1 text-sm sm:text-base text-muted-foreground">
-                        <li>órdenes judiciales,</li>
-                        <li>solicitudes de autoridades competentes,</li>
-                        <li>obligaciones legales aplicables.</li>
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h3 className="text-base sm:text-lg font-semibold mb-2">d) Socios autorizados (con consentimiento)</h3>
-                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                        Cualquier intercambio con terceros con fines distintos al funcionamiento de la plataforma requerirá consentimiento explícito.
+                        Cualquier intercambio con terceros con fines distintos al funcionamiento de nuestros servicios requerirá su consentimiento explícito.
                       </p>
                     </div>
                   </div>
@@ -173,99 +140,89 @@ export default function PrivacidadPage() {
                 <section className="space-y-3 sm:space-y-4">
                   <h2 className="text-xl sm:text-2xl font-bold">5. Seguridad de los datos</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Protegemos la información mediante medidas técnicas y organizativas que incluyen:
+                    Implementamos medidas técnicas y organizativas para proteger la información:
                   </p>
                   <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
-                    <li>cifrado de datos en tránsito,</li>
-                    <li>control de acceso basado en roles,</li>
-                    <li>monitoreo de actividad inusual,</li>
-                    <li>copias de seguridad internas,</li>
-                    <li>auditorías periódicas,</li>
-                    <li>protocolos de detección y prevención de fraude digital.</li>
+                    <li>Cifrado de datos en tránsito y en reposo</li>
+                    <li>Control de acceso basado en roles y permisos</li>
+                    <li>Monitoreo continuo de actividad inusual</li>
+                    <li>Copias de seguridad regulares</li>
+                    <li>Auditorías periódicas de seguridad</li>
+                    <li>Protocolos de detección y prevención de amenazas</li>
+                    <li>Capacitación del personal en seguridad de datos</li>
                   </ul>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Aunque implementamos medidas sólidas, ninguna plataforma puede garantizar seguridad absoluta.
+                    Aunque implementamos medidas sólidas, ninguna empresa puede garantizar seguridad absoluta. Le recomendamos mantener sus credenciales seguras y notificarnos inmediatamente cualquier actividad sospechosa.
                   </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
                   <h2 className="text-xl sm:text-2xl font-bold">6. Retención de datos</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Conservamos la información únicamente durante el tiempo necesario para:
+                    Conservamos la información durante el tiempo necesario para:
                   </p>
                   <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
-                    <li>operar la plataforma,</li>
-                    <li>cumplir obligaciones contractuales o legales,</li>
-                    <li>atender requerimientos de soporte,</li>
-                    <li>llevar registros operativos razonables.</li>
+                    <li>Proporcionar y mantener nuestros servicios</li>
+                    <li>Cumplir obligaciones contractuales y legales</li>
+                    <li>Atender solicitudes de soporte técnico</li>
+                    <li>Mantener registros contables y fiscales (según requerimientos legales)</li>
+                    <li>Resolver disputas y hacer cumplir acuerdos</li>
                   </ul>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Una vez cumplidas estas finalidades, los datos pueden ser eliminados o anonimizados de forma segura.
+                    Una vez cumplidas estas finalidades, los datos pueden ser eliminados o anonimizados de forma segura, excepto cuando la ley requiera su conservación.
                   </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
                   <h2 className="text-xl sm:text-2xl font-bold">7. Derechos del usuario</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Dependiendo de la normativa aplicable, usted puede ejercer los siguientes derechos:
+                    Usted tiene derecho a:
                   </p>
                   <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
-                    <li>acceder a sus datos,</li>
-                    <li>solicitar correcciones,</li>
-                    <li>solicitar eliminación cuando proceda,</li>
-                    <li>limitar ciertos usos,</li>
-                    <li>oponerse al tratamiento cuando sea apropiado,</li>
-                    <li>retirar consentimiento para comunicaciones no esenciales,</li>
-                    <li>solicitar portabilidad de datos en casos específicos.</li>
+                    <li><strong>Acceso:</strong> Solicitar una copia de sus datos personales</li>
+                    <li><strong>Rectificación:</strong> Solicitar corrección de datos inexactos o incompletos</li>
+                    <li><strong>Eliminación:</strong> Solicitar eliminación cuando los datos ya no sean necesarios</li>
+                    <li><strong>Limitación:</strong> Solicitar restricción del procesamiento en ciertos casos</li>
+                    <li><strong>Portabilidad:</strong> Solicitar transferencia de sus datos a otro proveedor</li>
+                    <li><strong>Oposición:</strong> Oponerse al procesamiento para fines de marketing directo</li>
+                    <li><strong>Retirar consentimiento:</strong> Retirar el consentimiento cuando el procesamiento se base en él</li>
                   </ul>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Las solicitudes pueden realizarse mediante los medios descritos en la sección 12.
+                    Para ejercer estos derechos, puede contactarnos mediante los medios indicados en la sección 12.
                   </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
                   <h2 className="text-xl sm:text-2xl font-bold">8. Cookies y tecnologías similares</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Usamos cookies para:
+                    Utilizamos cookies y tecnologías similares para:
                   </p>
                   <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
-                    <li>mejorar la funcionalidad del sitio,</li>
-                    <li>recordar preferencias,</li>
-                    <li>analizar rendimiento,</li>
-                    <li>mantener sesiones activas.</li>
+                    <li>Mejorar la funcionalidad de nuestro sitio web</li>
+                    <li>Recordar preferencias del usuario</li>
+                    <li>Analizar el rendimiento y uso del sitio</li>
+                    <li>Mantener sesiones activas</li>
+                    <li>Proporcionar funcionalidades personalizadas</li>
                   </ul>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    El usuario puede controlar el uso de cookies desde su navegador o dispositivo.
+                    Puede controlar el uso de cookies desde la configuración de su navegador. Tenga en cuenta que deshabilitar cookies puede afectar la funcionalidad del sitio.
                   </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
                   <h2 className="text-xl sm:text-2xl font-bold">9. Privacidad de menores</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    La plataforma no está dirigida a personas menores de 18 años.
+                    Nuestros servicios están dirigidos a empresas y profesionales. No recopilamos intencionalmente información de menores de 18 años.
                   </p>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Si identificamos el registro de un menor, eliminaremos la información de forma inmediata.
-                  </p>
-                </section>
-
-                <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">10. Cambios a esta política</h2>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Podemos actualizar esta política de privacidad en cualquier momento.
-                  </p>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Cualquier cambio será publicado en esta página y tendrá efecto desde su publicación.
-                  </p>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Recomendamos revisar este documento periódicamente.
+                    Si identificamos que se ha proporcionado información de un menor, eliminaremos dicha información de forma inmediata.
                   </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">11. Transferencias internacionales</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold">10. Transferencias internacionales</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Parte del procesamiento puede realizarse fuera de Honduras, en países con infraestructura tecnológica avanzada.
+                    Parte del procesamiento de datos puede realizarse fuera de Honduras, en países con infraestructura tecnológica avanzada.
                   </p>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     En todos los casos, implementamos medidas adecuadas para garantizar un nivel de protección equivalente al requerido por las normativas de privacidad aplicables.
@@ -273,12 +230,31 @@ export default function PrivacidadPage() {
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
+                  <h2 className="text-xl sm:text-2xl font-bold">11. Cambios a esta política</h2>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    Podemos actualizar esta política de privacidad en cualquier momento para reflejar cambios en nuestras prácticas o por razones legales, operativas o regulatorias.
+                  </p>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    Cualquier cambio será publicado en esta página con la fecha de última actualización. Le recomendamos revisar esta política periódicamente.
+                  </p>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    Si los cambios son significativos, le notificaremos por correo electrónico o mediante un aviso prominente en nuestro sitio web.
+                  </p>
+                </section>
+
+                <section className="space-y-3 sm:space-y-4">
                   <h2 className="text-xl sm:text-2xl font-bold">12. Contacto</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Para consultas o solicitudes relacionadas con privacidad, puede contactarnos a:
+                    Para consultas, solicitudes o ejercer sus derechos relacionados con la privacidad, puede contactarnos a:
                   </p>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     📧 <a href="mailto:info@netmarkethn.com" className="text-teal hover:underline">info@netmarkethn.com</a>
+                  </p>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    📞 +504 9279-0292
+                  </p>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    Responderemos a su solicitud en un plazo máximo de 30 días hábiles.
                   </p>
                 </section>
               </div>

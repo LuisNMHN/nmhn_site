@@ -37,13 +37,13 @@ export function Header() {
             href="/#servicios"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap"
           >
-            Sobre nosotros
+            Servicios
           </Link>
           <Link
-            href="/#plataforma-desarrollo"
+            href="/#como-trabajamos"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap"
           >
-            Plataforma tecnológica
+            Cómo trabajamos
           </Link>
           <Link
             href="/faq"
@@ -58,15 +58,13 @@ export function Header() {
             size="default" 
             className="bg-teal text-teal-foreground hover:bg-teal/90 whitespace-nowrap"
             onClick={() => {
-              const element = document.getElementById("contacto")
+              const element = document.getElementById("cotizacion")
               if (element) {
                 element.scrollIntoView({ behavior: "smooth", block: "start" })
-              } else {
-                window.location.href = "/contacto"
               }
             }}
           >
-            Contactar
+            Cotización
           </Button>
         </div>
 
@@ -96,14 +94,14 @@ export function Header() {
               className="block py-2 text-sm sm:text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Sobre nosotros
+              Servicios
             </Link>
             <Link
-              href="/#plataforma-desarrollo"
+              href="/#como-trabajamos"
               className="block py-2 text-sm sm:text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Plataforma tecnológica
+              Cómo trabajamos
             </Link>
             <Link
               href="/faq"
@@ -117,15 +115,13 @@ export function Header() {
               className="w-full mt-3 sm:mt-4 bg-teal text-teal-foreground hover:bg-teal/90 text-sm sm:text-base"
               onClick={() => {
                 setMobileMenuOpen(false)
-                const element = document.getElementById("contacto")
+                const element = document.getElementById("cotizacion")
                 if (element) {
                   element.scrollIntoView({ behavior: "smooth", block: "start" })
-                } else {
-                  window.location.href = "/contacto"
                 }
               }}
             >
-              Contactar
+              Cotización
             </Button>
           </div>
         </div>

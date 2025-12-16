@@ -29,12 +29,17 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/#servicios" className="text-muted-foreground transition-colors hover:text-foreground">
-                  Sobre nosotros
+                  Servicios
                 </Link>
               </li>
               <li>
-                <Link href="/#plataforma-desarrollo" className="text-muted-foreground transition-colors hover:text-foreground">
-                  Plataforma tecnológica
+                <Link href="/#como-trabajamos" className="text-muted-foreground transition-colors hover:text-foreground">
+                  Cómo trabajamos
+                </Link>
+              </li>
+              <li>
+                <Link href="/#cotizacion" className="text-muted-foreground transition-colors hover:text-foreground">
+                  Cotización
                 </Link>
               </li>
               <li>
@@ -58,6 +63,16 @@ export function Footer() {
                   Política de privacidad
                 </Link>
               </li>
+              <li>
+                <Link href="/devolucion" className="text-muted-foreground transition-colors hover:text-foreground">
+                  Política de devolución
+                </Link>
+              </li>
+              <li>
+                <Link href="/medios-pago" className="text-muted-foreground transition-colors hover:text-foreground">
+                  Medios de pago
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -73,14 +88,7 @@ export function Footer() {
                 <p className="text-muted-foreground">+504 9279-0292</p>
               </li>
               <li>
-                <p className="text-muted-foreground">soporte@netmarkethn.com</p>
-              </li>
-              <li>
-                <p className="text-muted-foreground leading-relaxed">
-                  30 N Gould St Ste R<br />
-                  Sheridan, WY 82801<br />
-                  United States
-                </p>
+                <p className="text-muted-foreground">info@netmarkethn.com</p>
               </li>
             </ul>
           </div>
@@ -89,7 +97,7 @@ export function Footer() {
                 <div className="mt-8 sm:mt-12 border-t border-border pt-6 sm:pt-8 space-y-2 text-center text-xs sm:text-sm text-muted-foreground">
                   <p>&copy; 2025 NETMARKETHN LLC. Todos los derechos reservados.</p>
                   <p className="text-[10px] sm:text-xs text-muted-foreground/70 max-w-4xl mx-auto leading-relaxed">
-                    NMHN es una empresa tecnológica. No ofrece servicios financieros, no procesa pagos y no administra fondos de terceros. Toda la información y funcionalidades presentadas tienen fines exclusivamente digitales.
+                    NMHN es una empresa tecnológica especializada en desarrollo de software, servicios web y soluciones digitales. Todos los servicios ofrecidos están orientados a facilitar la transformación digital de empresas y profesionales en Honduras.
                   </p>
                 </div>
       </div>

@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 
 export const metadata = {
   title: "Términos y condiciones - NMHN",
-  description: "Términos y condiciones de uso de la plataforma NMHN",
+  description: "Términos y condiciones de uso de los servicios de NMHN",
 }
 
 export default function TerminosPage() {
@@ -18,7 +18,7 @@ export default function TerminosPage() {
               <div className="space-y-3 sm:space-y-4">
                 <h1 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl md:text-5xl">Términos y condiciones</h1>
                 <p className="text-sm sm:text-base text-muted-foreground">
-                  Última actualización: 28 de noviembre de 2025
+                  Última actualización: {new Date().toLocaleDateString('es-HN', { year: 'numeric', month: 'long', day: 'numeric' })}
                 </p>
               </div>
 
@@ -26,182 +26,189 @@ export default function TerminosPage() {
                 <section className="space-y-3 sm:space-y-4">
                   <h2 className="text-xl sm:text-2xl font-bold">1. Aceptación de los términos</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Al acceder o utilizar NMHN ("la plataforma"), usted confirma que ha leído, comprendido y aceptado estos términos y condiciones. Si no está de acuerdo con alguno de los apartados, no debe utilizar la plataforma.
+                    Al contratar o utilizar los servicios de NMHN ("la Empresa"), usted confirma que ha leído, comprendido y aceptado estos términos y condiciones. Si no está de acuerdo con alguno de los apartados, no debe utilizar nuestros servicios.
                   </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">2. Naturaleza y propósito de la plataforma</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold">2. Servicios ofrecidos</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    NMHN es una plataforma digital en constante desarrollo cuyo propósito es contribuir al fortalecimiento del mercado digital en Honduras mediante la creación de herramientas tecnológicas dirigidas a emprendedores, profesionales y negocios.
-                  </p>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    La plataforma se limita a funciones digitales y tecnológicas. NMHN no es una entidad financiera y no realiza actividades reguladas como:
+                    NMHN es una empresa tecnológica especializada en:
                   </p>
                   <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
-                    <li>administración de fondos,</li>
-                    <li>servicios bancarios,</li>
-                    <li>transferencias de dinero,</li>
-                    <li>procesamiento de pagos,</li>
-                    <li>operación como pasarela de pago,</li>
-                    <li>oferta de productos financieros.</li>
+                    <li>Desarrollo de sitios web modernos y responsivos</li>
+                    <li>Desarrollo de software personalizado y aplicaciones</li>
+                    <li>Asesorías tecnológicas y consultoría</li>
+                    <li>Capacitación especializada en tecnologías modernas</li>
+                    <li>Herramientas digitales y software listo para implementar</li>
+                    <li>Plantillas avanzadas y personalizables</li>
+                    <li>Licencias empresariales de software (próximamente)</li>
                   </ul>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Cualquier funcionalidad futura estará orientada exclusivamente al desarrollo tecnológico.
+                    Todos los servicios están orientados a facilitar la transformación digital de empresas y profesionales en Honduras.
                   </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">3. Cuentas de usuario</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold">3. Proceso de contratación</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Algunas funciones pueden requerir un registro. El usuario deberá proporcionar información exacta, completa y actualizada.
-                  </p>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    El usuario es responsable de:
+                    El proceso de contratación de servicios incluye las siguientes etapas:
                   </p>
                   <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
-                    <li>la confidencialidad de sus credenciales,</li>
-                    <li>el uso realizado desde su cuenta,</li>
-                    <li>notificar accesos no autorizados.</li>
+                    <li><strong>Diagnóstico:</strong> Analizamos sus necesidades y objetivos</li>
+                    <li><strong>Propuesta:</strong> Elaboramos una propuesta detallada con alcance, tiempos y presupuesto</li>
+                    <li><strong>Desarrollo:</strong> Implementamos la solución con metodologías ágiles</li>
+                    <li><strong>Entrega:</strong> Proyecto completamente funcional y documentado</li>
+                    <li><strong>Soporte:</strong> Mantenimiento continuo y asistencia técnica</li>
                   </ul>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    NMHN puede suspender o restringir cuentas que presenten información falsa, uso indebido o actividad sospechosa.
+                    La contratación formal se realiza mediante la aceptación de la propuesta y el pago correspondiente según los términos acordados.
                   </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">4. Uso permitido de la plataforma</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold">4. Obligaciones del cliente</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    El usuario se compromete a utilizar NMHN de forma responsable y conforme a la ley.
-                  </p>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    No está permitido:
+                    El cliente se compromete a:
                   </p>
                   <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
-                    <li>realizar actividades ilícitas, fraudulentas o engañosas,</li>
-                    <li>publicar contenido ofensivo, ilegal o no autorizado,</li>
-                    <li>infringir derechos de propiedad intelectual,</li>
-                    <li>manipular o interferir con el funcionamiento técnico de la plataforma,</li>
-                    <li>intentar acceder a funciones restringidas sin autorización.</li>
+                    <li>Proporcionar información veraz, completa y actualizada</li>
+                    <li>Colaborar activamente durante el proceso de desarrollo</li>
+                    <li>Realizar los pagos según los términos acordados</li>
+                    <li>Respetar los derechos de propiedad intelectual de NMHN</li>
+                    <li>No utilizar los servicios para fines ilegales o no autorizados</li>
+                    <li>Mantener la confidencialidad de credenciales y accesos proporcionados</li>
                   </ul>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">5. Evolución y alcance de la plataforma</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold">5. Obligaciones de NMHN</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    NMHN se encuentra en desarrollo continuo. Por ello, la plataforma podrá:
+                    NMHN se compromete a:
                   </p>
                   <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
-                    <li>modificar o mejorar funcionalidades,</li>
-                    <li>introducir nuevas herramientas,</li>
-                    <li>retirar características temporal o permanentemente,</li>
-                    <li>mantener funciones en fase beta o acceso limitado,</li>
-                    <li>actualizar estructura, contenido o diseño sin previo aviso.</li>
+                    <li>Desarrollar los servicios según las especificaciones acordadas</li>
+                    <li>Entregar proyectos funcionales y documentados</li>
+                    <li>Mantener la confidencialidad de la información del cliente</li>
+                    <li>Proporcionar soporte técnico según los términos acordados</li>
+                    <li>Cumplir con los plazos establecidos en la propuesta</li>
+                    <li>Utilizar tecnologías y metodologías de desarrollo modernas y seguras</li>
                   </ul>
+                </section>
+
+                <section className="space-y-3 sm:space-y-4">
+                  <h2 className="text-xl sm:text-2xl font-bold">6. Precios y pagos</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Toda descripción pública tiene carácter informativo y no garantiza disponibilidad permanente.
+                    Los precios de los servicios se establecen en la propuesta comercial y pueden variar según la complejidad y alcance del proyecto.
+                  </p>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    Los pagos se realizarán según el cronograma establecido en la propuesta, que puede incluir pagos parciales durante el desarrollo del proyecto.
+                  </p>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    Los precios están expresados en la moneda acordada y no incluyen impuestos, salvo que se indique lo contrario.
                   </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">6. Servicios internos y condiciones adicionales</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold">7. Propiedad intelectual</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Algunas funciones avanzadas o internas —accesibles únicamente a usuarios registrados— pueden estar sujetas a términos específicos adicionales.
+                    Todos los elementos desarrollados por NMHN, incluyendo código fuente, diseño, documentación y materiales relacionados, son propiedad de NMHN hasta que se complete el pago total del proyecto.
                   </p>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Si existiera discrepancia entre los términos generales y los términos específicos de una funcionalidad, prevalecerán los términos adicionales.
-                  </p>
-                </section>
-
-                <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">7. Funcionalidades premium y costos</h2>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    En caso de incorporar funciones o herramientas premium, NMHN informará claramente los costos antes de su utilización.
+                    Una vez completado el pago, los derechos de uso del software desarrollado se transfieren al cliente según los términos específicos acordados en la propuesta.
                   </p>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    NMHN podrá actualizar precios, requisitos o condiciones de uso cuando sea necesario.
-                  </p>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Si se utilizan proveedores externos, el usuario deberá aceptar sus respectivos términos.
+                    NMHN se reserva el derecho de utilizar el conocimiento y experiencia adquirida en proyectos futuros, siempre respetando la confidencialidad de la información específica del cliente.
                   </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">8. Contenido generado por el usuario</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold">8. Modificaciones y cambios de alcance</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    El usuario es el único responsable del contenido que publique o comparta dentro de la plataforma.
+                    Cualquier modificación o cambio en el alcance del proyecto original debe ser acordado por ambas partes y puede implicar ajustes en el presupuesto y cronograma.
                   </p>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    NMHN podrá restringir, moderar o eliminar contenido que:
-                  </p>
-                  <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
-                    <li>viole estos términos,</li>
-                    <li>sea inapropiado, ofensivo o ilegal,</li>
-                    <li>afecte la seguridad o integridad de la plataforma.</li>
-                  </ul>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    El usuario declara poseer los derechos necesarios sobre el contenido que publica.
+                    Los cambios solicitados por el cliente después de la aprobación inicial serán evaluados y cotizados por separado.
                   </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">9. Propiedad intelectual</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold">9. Garantías y soporte</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Todos los elementos de NMHN, incluyendo software, diseño, logotipos, textos y materiales visuales, son propiedad de la empresa o sus licenciantes.
+                    NMHN garantiza que los servicios desarrollados funcionarán según las especificaciones acordadas durante el período de garantía establecido en la propuesta (típicamente 30 a 90 días después de la entrega).
                   </p>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Queda prohibido reproducir, distribuir, modificar o utilizar estos elementos sin autorización previa.
+                    El soporte post-entrega incluye corrección de errores y defectos relacionados con el desarrollo, pero no incluye nuevas funcionalidades o modificaciones no contempladas en el alcance original.
                   </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
                   <h2 className="text-xl sm:text-2xl font-bold">10. Limitación de responsabilidad</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    La plataforma se ofrece "tal cual", sin garantías expresas o implícitas.
-                  </p>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     NMHN no será responsable por:
                   </p>
                   <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
-                    <li>pérdidas económicas,</li>
-                    <li>daños indirectos o consecuenciales,</li>
-                    <li>fallos técnicos de terceros,</li>
-                    <li>decisiones comerciales o personales del usuario,</li>
-                    <li>accesos no autorizados,</li>
-                    <li>uso indebido de la plataforma.</li>
+                    <li>Pérdidas económicas indirectas o consecuenciales</li>
+                    <li>Daños resultantes del uso indebido de los servicios desarrollados</li>
+                    <li>Problemas derivados de cambios no autorizados realizados por terceros</li>
+                    <li>Interrupciones causadas por proveedores de servicios externos (hosting, dominios, etc.)</li>
+                    <li>Decisiones comerciales del cliente basadas en los servicios proporcionados</li>
                   </ul>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    El usuario utiliza NMHN bajo su propio criterio y responsabilidad.
+                    La responsabilidad total de NMHN no excederá el monto total pagado por el cliente por el servicio específico.
                   </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">11. Actualización de los términos</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold">11. Confidencialidad</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    NMHN puede modificar estos términos en cualquier momento. La versión vigente estará disponible en la plataforma.
+                    Ambas partes se comprometen a mantener la confidencialidad de toda la información compartida durante la prestación de servicios.
                   </p>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    El uso continuado implica aceptación de las modificaciones.
+                    Esta obligación permanecerá vigente incluso después de la finalización del proyecto.
                   </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">12. Suspensión o cancelación de acceso</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold">12. Cancelación y resolución</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    NMHN podrá suspender temporal o permanentemente el acceso de un usuario si detecta:
+                    Cualquiera de las partes puede cancelar el proyecto mediante notificación escrita con al menos 15 días de anticipación.
                   </p>
-                  <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
-                    <li>incumplimiento de estos términos,</li>
-                    <li>comportamiento inapropiado,</li>
-                    <li>actividad fraudulenta o sospechosa,</li>
-                    <li>violación de derechos de terceros.</li>
-                  </ul>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    En caso de cancelación por parte del cliente, se facturará el trabajo realizado hasta la fecha de cancelación según los términos acordados.
+                  </p>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    NMHN se reserva el derecho de suspender o cancelar servicios en caso de incumplimiento de pago o violación de estos términos.
+                  </p>
                 </section>
 
                 <section className="space-y-3 sm:space-y-4">
-                  <h2 className="text-xl sm:text-2xl font-bold">13. Legislación aplicable</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold">13. Actualización de los términos</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Estos términos se rigen por las leyes de la República de Honduras. Cualquier disputa será resuelta ante los tribunales competentes.
+                    NMHN puede modificar estos términos en cualquier momento. La versión vigente estará disponible en esta página.
+                  </p>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    Los cambios no afectarán proyectos ya contratados, salvo acuerdo expreso entre las partes.
+                  </p>
+                </section>
+
+                <section className="space-y-3 sm:space-y-4">
+                  <h2 className="text-xl sm:text-2xl font-bold">14. Legislación aplicable</h2>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    Estos términos se rigen por las leyes de la República de Honduras. Cualquier disputa será resuelta ante los tribunales competentes de Honduras.
+                  </p>
+                </section>
+
+                <section className="space-y-3 sm:space-y-4">
+                  <h2 className="text-xl sm:text-2xl font-bold">15. Contacto</h2>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    Para consultas sobre estos términos, puede contactarnos a:
+                  </p>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    📧 <a href="mailto:info@netmarkethn.com" className="text-teal hover:underline">info@netmarkethn.com</a>
+                  </p>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    📞 +504 9279-0292
                   </p>
                 </section>
               </div>
