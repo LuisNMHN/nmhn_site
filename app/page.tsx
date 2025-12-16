@@ -427,23 +427,19 @@ export default function HomePage() {
     }
 
     try {
-      // Construir correo para abrir en el cliente de correo del usuario
-      const subject = encodeURIComponent(`Solicitud de cotización - ${quoteFormData.nombre}`)
-      const bodyLines = [
-        "Nueva solicitud de cotización desde la web:",
-        "",
-        `Nombre: ${quoteFormData.nombre}`,
-        `Correo: ${quoteFormData.email}`,
-        `Teléfono: +504 ${quoteFormData.telefono}`,
-        `Tipo de proyecto: ${quoteFormData.tipoProyecto || "No especificado"}`,
-        "",
-        "Descripción del proyecto:",
-        quoteFormData.descripcion,
-      ]
-      const body = encodeURIComponent(bodyLines.join("\n"))
+      // Enviar cotización a través de la API
+      const response = await fetch("/api/quote", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(quoteFormData),
+      })
 
-      if (typeof window !== "undefined") {
-        window.location.href = `mailto:info@netmarkethn.com?subject=${subject}&body=${body}`
+      const result = await response.json()
+
+      if (!result.ok) {
+        throw new Error("Error al enviar la cotización")
       }
 
       setIsQuoteModalOpen(true)
@@ -463,7 +459,8 @@ export default function HomePage() {
         descripcion: false,
       })
     } catch (error) {
-      console.error("Error al preparar la cotización:", error)
+      console.error("Error al enviar la cotización:", error)
+      // En el futuro se puede mostrar un mensaje de error al usuario
     }
   }
 
