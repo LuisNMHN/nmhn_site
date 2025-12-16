@@ -893,7 +893,7 @@ export default function HomePage() {
                           value={quoteFormData.nombre}
                           onChange={handleQuoteChange}
                           onBlur={handleQuoteBlur}
-                          className={quoteErrors.nombre && quoteTouched.nombre ? "border-destructive" : ""}
+                          className={`placeholder:text-muted-foreground/50 ${quoteErrors.nombre && quoteTouched.nombre ? "border-destructive" : ""}`}
                           aria-invalid={quoteErrors.nombre && quoteTouched.nombre ? "true" : "false"}
                         />
                         {quoteErrors.nombre && quoteTouched.nombre && (
@@ -911,7 +911,7 @@ export default function HomePage() {
                           value={quoteFormData.email}
                           onChange={handleQuoteChange}
                           onBlur={handleQuoteBlur}
-                          className={quoteErrors.email && quoteTouched.email ? "border-destructive" : ""}
+                          className={`placeholder:text-muted-foreground/50 ${quoteErrors.email && quoteTouched.email ? "border-destructive" : ""}`}
                           aria-invalid={quoteErrors.email && quoteTouched.email ? "true" : "false"}
                         />
                         {quoteErrors.email && quoteTouched.email && (
@@ -934,7 +934,7 @@ export default function HomePage() {
                           value={quoteFormData.telefono}
                           onChange={handleQuoteChange}
                           onBlur={handleQuoteBlur}
-                          className={`${quoteErrors.telefono && quoteTouched.telefono ? "border-destructive" : ""} flex-1`}
+                          className={`placeholder:text-muted-foreground/50 flex-1 ${quoteErrors.telefono && quoteTouched.telefono ? "border-destructive" : ""}`}
                           aria-invalid={quoteErrors.telefono && quoteTouched.telefono ? "true" : "false"}
                         />
                       </div>
@@ -987,7 +987,7 @@ export default function HomePage() {
                         value={quoteFormData.descripcion}
                         onChange={handleQuoteChange}
                         onBlur={handleQuoteBlur}
-                        className={quoteErrors.descripcion && quoteTouched.descripcion ? "border-destructive" : ""}
+                        className={`placeholder:text-muted-foreground/50 ${quoteErrors.descripcion && quoteTouched.descripcion ? "border-destructive" : ""}`}
                         aria-invalid={quoteErrors.descripcion && quoteTouched.descripcion ? "true" : "false"}
                       />
                       {quoteErrors.descripcion && quoteTouched.descripcion && (
