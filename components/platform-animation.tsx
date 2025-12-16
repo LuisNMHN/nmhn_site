@@ -76,7 +76,7 @@ export function PlatformAnimation() {
   }, [])
 
   return (
-    <div className="relative w-full max-w-md mx-auto h-[350px] sm:h-[400px] lg:h-[450px] rounded-xl border border-border bg-gradient-to-br from-background via-muted/30 to-background overflow-hidden">
+    <div className="relative w-full max-w-md mx-auto h-[350px] sm:h-[400px] lg:h-[450px] rounded-xl border border-black bg-gradient-to-br from-background via-muted/30 to-background overflow-hidden">
       {/* Fondo animado con partículas */}
       <div className="absolute inset-0 overflow-hidden">
         {particles.map((particle, i) => (
@@ -223,7 +223,7 @@ export function PlatformAnimation() {
       {/* Texto descriptivo */}
       <div className="absolute bottom-4 left-0 right-0 text-center px-4">
         <p className="text-xs sm:text-sm text-muted-foreground font-medium">
-          Plataforma tecnológica multiservicios
+          Soluciones tecnológicas a la medida
         </p>
       </div>
 

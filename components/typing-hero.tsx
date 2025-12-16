@@ -2,37 +2,32 @@
 
 import { useState, useEffect } from "react"
 
-// Variantes tipográficas: informáticas (monoespaciadas / tech) y cursivas, con tamaños más contenidos
+// Variantes tipográficas elegantes para el título principal
 const fontStyles = [
-  // Sans moderna base
+  // Sans moderna elegante
   {
     className: "font-sans",
-    style: { fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" },
+    style: { fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", letterSpacing: "-0.03em" },
   },
-  // Serif elegante
+  // Serif clásica
   {
     className: "font-serif",
     style: { fontFamily: "Georgia, 'Times New Roman', serif", fontWeight: 600 },
   },
-  // Monoespaciada clásica (look informático)
+  // Serif de alto contraste (look editorial)
   {
-    className: "font-mono",
-    style: { fontFamily: "'Fira Code', 'Courier New', Courier, monospace", letterSpacing: "0.04em" },
+    className: "font-serif",
+    style: { fontFamily: "'Palatino Linotype', Palatino, 'Book Antiqua', serif", fontWeight: 500 },
   },
-  // Monoespaciada más compacta
+  // Sans fina y limpia
   {
-    className: "font-mono",
-    style: { fontFamily: "'JetBrains Mono', 'SF Mono', Menlo, monospace", letterSpacing: "0.03em" },
+    className: "font-sans",
+    style: { fontFamily: "'Segoe UI', system-ui, -apple-system, sans-serif", fontWeight: 300, letterSpacing: "-0.02em" },
   },
-  // Cursiva suave
+  // Cursiva elegante
   {
     className: "italic",
     style: { fontFamily: "'Georgia', 'Times New Roman', serif", fontStyle: "italic" },
-  },
-  // Cursiva tipo script (fallback genérico, sin fuentes externas)
-  {
-    className: "italic",
-    style: { fontFamily: "'Brush Script MT', 'Segoe Script', cursive", fontStyle: "italic" },
   },
 ]
 
@@ -83,7 +78,7 @@ export function TypingHero() {
 
   return (
     <h1 
-      className={`text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-[2.6rem] font-semibold tracking-tight text-balance ${currentFont.className} transition-all duration-500`}
+      className={`text-3xl sm:text-4xl md:text-5xl lg:text-[2.9rem] xl:text-[3.1rem] font-semibold tracking-tight text-balance ${currentFont.className} transition-all duration-500`}
       style={currentFont.style}
     >
       {displayedText}

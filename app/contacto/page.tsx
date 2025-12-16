@@ -138,7 +138,7 @@ export default function ContactoPage() {
 
             <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
               {/* Formulario de Contacto */}
-              <Card className="border-border">
+              <Card className="border-black">
                 <CardHeader className="px-4 sm:px-6 pt-6 sm:pt-8">
                   <CardTitle className="text-xl sm:text-2xl">Envíanos un mensaje</CardTitle>
                   <CardDescription className="text-sm">Completa el formulario y nos pondremos en contacto contigo</CardDescription>
@@ -216,7 +216,7 @@ export default function ContactoPage() {
 
               {/* Información de Contacto */}
               <div className="space-y-4 sm:space-y-6">
-                <Card className="border-border">
+                <Card className="border-black">
                   <CardHeader className="px-4 sm:px-6 pt-6 sm:pt-8">
                     <CardTitle className="text-xl sm:text-2xl">Información de contacto</CardTitle>
                     <CardDescription className="text-sm">Otras formas de ponerte en contacto con nosotros</CardDescription>
@@ -256,7 +256,7 @@ export default function ContactoPage() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-border bg-gradient-to-br from-primary/5 to-accent/5">
+                <Card className="border-black bg-gradient-to-br from-primary/5 to-accent/5">
                   <CardContent className="p-4 sm:p-6 space-y-3 sm:space-y-4">
                     <h3 className="text-base sm:text-lg font-semibold">Horario de atención</h3>
                     <div className="space-y-2 text-xs sm:text-sm text-muted-foreground">

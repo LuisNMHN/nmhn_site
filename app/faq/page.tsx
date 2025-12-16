@@ -1,5 +1,6 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { Card, CardContent } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 export const metadata = {
@@ -13,16 +14,22 @@ export default function FAQPage() {
       <Header />
 
       <main className="flex-1">
-        <section id="faq" className="w-full py-12 sm:py-16 md:py-20 lg:py-24">
+        <section id="faq" className="w-full pt-6 sm:pt-8 md:pt-10 lg:pt-12 xl:pt-14 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="mx-auto max-w-4xl space-y-6 sm:space-y-8">
               <div className="space-y-3 sm:space-y-4">
                 <h1 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl md:text-5xl">Preguntas frecuentes</h1>
               </div>
 
-              <div className="prose prose-gray dark:prose-invert max-w-none space-y-6 sm:space-y-8">
-                <Accordion type="single" collapsible className="space-y-3 sm:space-y-4">
-                  <AccordionItem value="item-1" className="rounded-lg border border-border bg-card px-4 sm:px-6">
+              <div className="max-w-none space-y-6 sm:space-y-8">
+                <Card className="border-black">
+                  <CardContent className="px-4 sm:px-6 py-6 sm:py-8">
+                    <Accordion
+                      type="single"
+                      collapsible
+                      className="space-y-0"
+                    >
+                      <AccordionItem value="item-1" className="border-b border-zinc-200 dark:border-zinc-800 px-0 first:pt-0">
                     <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
                       ¿Qué es NMHN?
                     </AccordionTrigger>
@@ -31,7 +38,7 @@ export default function FAQPage() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="item-2" className="rounded-lg border border-border bg-card px-4 sm:px-6">
+                      <AccordionItem value="item-2" className="border-b border-zinc-200 dark:border-zinc-800 px-0 py-3 sm:py-4">
                     <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
                       ¿En qué etapa se encuentra la plataforma?
                     </AccordionTrigger>
@@ -40,7 +47,7 @@ export default function FAQPage() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="item-3" className="rounded-lg border border-border bg-card px-4 sm:px-6">
+                      <AccordionItem value="item-3" className="border-b border-zinc-200 dark:border-zinc-800 px-0 py-3 sm:py-4">
                     <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
                       ¿La plataforma ya está disponible para el público?
                     </AccordionTrigger>
@@ -49,7 +56,7 @@ export default function FAQPage() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="item-4" className="rounded-lg border border-border bg-card px-4 sm:px-6">
+                      <AccordionItem value="item-4" className="border-b border-zinc-200 dark:border-zinc-800 px-0 py-3 sm:py-4">
                     <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
                       ¿Qué tipo de herramientas ofrecerá NMHN?
                     </AccordionTrigger>
@@ -58,7 +65,7 @@ export default function FAQPage() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="item-5" className="rounded-lg border border-border bg-card px-4 sm:px-6">
+                      <AccordionItem value="item-5" className="border-b border-zinc-200 dark:border-zinc-800 px-0 py-3 sm:py-4">
                     <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
                       ¿NMHN es una entidad financiera?
                     </AccordionTrigger>
@@ -67,7 +74,7 @@ export default function FAQPage() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="item-6" className="rounded-lg border border-border bg-card px-4 sm:px-6">
+                      <AccordionItem value="item-6" className="border-b border-zinc-200 dark:border-zinc-800 px-0 py-3 sm:py-4">
                     <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
                       ¿Habrá costos o suscripciones para utilizar NMHN?
                     </AccordionTrigger>
@@ -76,7 +83,7 @@ export default function FAQPage() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="item-7" className="rounded-lg border border-border bg-card px-4 sm:px-6">
+                      <AccordionItem value="item-7" className="border-b border-zinc-200 dark:border-zinc-800 px-0 py-3 sm:py-4">
                     <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
                       ¿Necesito crear una cuenta para usar NMHN?
                     </AccordionTrigger>
@@ -85,28 +92,18 @@ export default function FAQPage() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="item-8" className="rounded-lg border border-border bg-card px-4 sm:px-6">
-                    <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
-                      ¿Cómo protege NMHN mis datos?
-                    </AccordionTrigger>
-                    <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                      Tratamos la seguridad y privacidad con seriedad. La información proporcionada por los usuarios se maneja bajo políticas de privacidad que cumplen buenas prácticas y solo se utiliza con fines operativos y administrativos.
-                    </AccordionContent>
-                  </AccordionItem>
+                      <AccordionItem value="item-8" className="border-b-0 px-0 py-3 sm:py-4">
+                        <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
+                          ¿Cómo protege NMHN mis datos?
+                        </AccordionTrigger>
+                        <AccordionContent className="text-sm sm:text-base text-muted-foreground">
+                          Tratamos la seguridad y privacidad con seriedad. La información proporcionada por los usuarios se maneja bajo políticas de privacidad que cumplen buenas prácticas y solo se utiliza con fines operativos y administrativos.
+                        </AccordionContent>
+                      </AccordionItem>
 
-                  <AccordionItem value="item-9" className="rounded-lg border border-border bg-card px-4 sm:px-6">
-                    <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
-                      ¿Con quién puedo comunicarme si tengo dudas?
-                    </AccordionTrigger>
-                    <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                      Puedes contactarnos a través de{" "}
-                      <a href="mailto:info@netmarkethn.com" className="text-teal hover:underline">
-                        info@netmarkethn.com
-                      </a>
-                      . Nuestro equipo estará disponible para atender consultas relacionadas con NMHN o el desarrollo de la plataforma.
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
+                    </Accordion>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>

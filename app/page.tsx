@@ -427,13 +427,24 @@ export default function HomePage() {
     }
 
     try {
-      await fetch("/api/quote", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(quoteFormData),
-      })
+      // Construir correo para abrir en el cliente de correo del usuario
+      const subject = encodeURIComponent(`Solicitud de cotización - ${quoteFormData.nombre}`)
+      const bodyLines = [
+        "Nueva solicitud de cotización desde la web:",
+        "",
+        `Nombre: ${quoteFormData.nombre}`,
+        `Correo: ${quoteFormData.email}`,
+        `Teléfono: +504 ${quoteFormData.telefono}`,
+        `Tipo de proyecto: ${quoteFormData.tipoProyecto || "No especificado"}`,
+        "",
+        "Descripción del proyecto:",
+        quoteFormData.descripcion,
+      ]
+      const body = encodeURIComponent(bodyLines.join("\n"))
+
+      if (typeof window !== "undefined") {
+        window.location.href = `mailto:info@netmarkethn.com?subject=${subject}&body=${body}`
+      }
 
       setIsQuoteModalOpen(true)
       // Resetear formulario
@@ -452,10 +463,16 @@ export default function HomePage() {
         descripcion: false,
       })
     } catch (error) {
-      console.error("Error al enviar la cotización:", error)
-      // En el futuro se puede mostrar un mensaje de error al usuario
+      console.error("Error al preparar la cotización:", error)
     }
   }
+
+  const isQuoteFormValid =
+    validateQuoteField("nombre", quoteFormData.nombre) === "" &&
+    validateQuoteField("email", quoteFormData.email) === "" &&
+    validateQuoteField("telefono", quoteFormData.telefono) === "" &&
+    validateQuoteField("tipoProyecto", quoteFormData.tipoProyecto) === "" &&
+    validateQuoteField("descripcion", quoteFormData.descripcion) === ""
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -463,7 +480,7 @@ export default function HomePage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section id="inicio" className="w-full py-8 sm:py-12 lg:py-24 xl:py-28">
+        <section id="inicio" className="w-full bg-background py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="grid gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20 max-w-7xl mx-auto">
               <div className="flex flex-col justify-center space-y-4 sm:space-y-6 lg:space-y-8 order-1">
@@ -498,7 +515,7 @@ export default function HomePage() {
         </section>
 
         {/* Servicios */}
-        <section id="servicios" className="border-y border-border bg-gradient-to-b from-background via-muted/30 to-background py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden">
+        <section id="servicios" className="border-y border-zinc-300 bg-muted/20 py-8 sm:py-10 md:py-12 lg:py-16 relative overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern opacity-5" />
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
             <div className="mx-auto max-w-4xl space-y-8 sm:space-y-12">
@@ -593,14 +610,11 @@ export default function HomePage() {
         </section>
 
         {/* Cómo trabajamos */}
-        <section id="como-trabajamos" className="w-full py-12 sm:py-16 md:py-20 lg:py-32 bg-gradient-to-br from-background via-teal/5 to-muted/20 relative overflow-hidden">
+        <section id="como-trabajamos" className="w-full bg-background py-8 sm:py-10 md:py-12 lg:py-16 relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(20,184,166,0.05),transparent_50%)]" />
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
             <div className="mx-auto max-w-6xl space-y-12 sm:space-y-16">
               <div className="text-center space-y-4 sm:space-y-6">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-teal/10 mb-4">
-                  <Settings className="w-8 h-8 text-teal" />
-                </div>
                 <h2 className="text-2xl font-bold tracking-tight text-balance sm:text-3xl md:text-4xl lg:text-5xl">
                   Cómo trabajamos
                 </h2>
@@ -684,7 +698,7 @@ export default function HomePage() {
                         )}
                         
                         <div
-                          className={`relative p-6 rounded-lg bg-card border border-border shadow-sm hover:shadow-lg transition-all duration-500 animate-fade-in-up h-full overflow-hidden ${
+                          className={`relative p-6 rounded-lg bg-card border border-black shadow-sm hover:shadow-lg transition-all duration-500 animate-fade-in-up h-full overflow-hidden ${
                             isActive 
                               ? 'workflow-active z-20 shadow-2xl border-2' 
                               : ''
@@ -756,7 +770,10 @@ export default function HomePage() {
         </section>
 
         {/* Preguntas frecuentes */}
-        <section id="faq" className="w-full py-12 sm:py-16 md:py-20 lg:py-32 xl:py-36">
+        <section
+          id="faq"
+          className="w-full border-y border-zinc-300 bg-muted/20 pt-6 sm:pt-8 md:pt-10 lg:pt-12 pb-6 sm:pb-8 md:pb-10 lg:pb-12"
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="mx-auto max-w-4xl space-y-6 sm:space-y-8">
               <div className="space-y-3 sm:space-y-4">
@@ -765,9 +782,15 @@ export default function HomePage() {
                 </h2>
               </div>
 
-              <div className="prose prose-gray dark:prose-invert max-w-none space-y-6 sm:space-y-8">
-                <Accordion type="single" collapsible className="space-y-3 sm:space-y-4">
-                  <AccordionItem value="item-1" className="rounded-lg border border-border bg-card px-4 sm:px-6">
+              <div className="max-w-none space-y-6 sm:space-y-8">
+                <Card className="border-black">
+                  <CardContent className="px-4 sm:px-6 py-6 sm:py-8">
+                    <Accordion
+                      type="single"
+                      collapsible
+                      className="space-y-0"
+                    >
+                      <AccordionItem value="item-1" className="border-b border-zinc-200 dark:border-zinc-800 px-0 first:pt-0 last:border-b-0">
                     <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
                       ¿Qué es NMHN?
                     </AccordionTrigger>
@@ -776,7 +799,7 @@ export default function HomePage() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="item-2" className="rounded-lg border border-border bg-card px-4 sm:px-6">
+                      <AccordionItem value="item-2" className="border-b border-zinc-200 dark:border-zinc-800 px-0 py-3 sm:py-4">
                     <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
                       ¿Qué servicios ofrecen?
                     </AccordionTrigger>
@@ -785,7 +808,7 @@ export default function HomePage() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="item-3" className="rounded-lg border border-border bg-card px-4 sm:px-6">
+                      <AccordionItem value="item-3" className="border-b border-zinc-200 dark:border-zinc-800 px-0 py-3 sm:py-4">
                     <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
                       ¿Cómo funciona el proceso de trabajo?
                     </AccordionTrigger>
@@ -794,7 +817,7 @@ export default function HomePage() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="item-4" className="rounded-lg border border-border bg-card px-4 sm:px-6">
+                      <AccordionItem value="item-4" className="border-b border-zinc-200 dark:border-zinc-800 px-0 py-3 sm:py-4">
                     <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
                       ¿A quién está dirigido sus servicios?
                     </AccordionTrigger>
@@ -803,7 +826,7 @@ export default function HomePage() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="item-5" className="rounded-lg border border-border bg-card px-4 sm:px-6">
+                      <AccordionItem value="item-5" className="border-b border-zinc-200 dark:border-zinc-800 px-0 py-3 sm:py-4">
                     <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
                       ¿Cuánto tiempo toma desarrollar un proyecto?
                     </AccordionTrigger>
@@ -812,7 +835,7 @@ export default function HomePage() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="item-6" className="rounded-lg border border-border bg-card px-4 sm:px-6">
+                      <AccordionItem value="item-6" className="border-b border-zinc-200 dark:border-zinc-800 px-0 py-3 sm:py-4">
                     <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
                       ¿Ofrecen soporte después de la entrega?
                     </AccordionTrigger>
@@ -821,41 +844,28 @@ export default function HomePage() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="item-7" className="rounded-lg border border-border bg-card px-4 sm:px-6">
-                    <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
-                      ¿Cómo puedo solicitar una cotización?
-                    </AccordionTrigger>
-                    <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                      Puedes solicitar una cotización completando el formulario en la sección "Cotización" de nuestra página web. Solo necesitas proporcionar información básica sobre tu proyecto y nos pondremos en contacto contigo para elaborar una propuesta detallada adaptada a tus necesidades.
-                    </AccordionContent>
-                  </AccordionItem>
+                      <AccordionItem value="item-7" className="border-b-0 px-0 py-3 sm:py-4">
+                        <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
+                          ¿Cómo puedo solicitar una cotización?
+                        </AccordionTrigger>
+                        <AccordionContent className="text-sm sm:text-base text-muted-foreground">
+                          Puedes solicitar una cotización completando el formulario en la sección "Cotización" de nuestra página web. Solo necesitas proporcionar información básica sobre tu proyecto y nos pondremos en contacto contigo para elaborar una propuesta detallada adaptada a tus necesidades.
+                        </AccordionContent>
+                      </AccordionItem>
 
-                  <AccordionItem value="item-8" className="rounded-lg border border-border bg-card px-4 sm:px-6">
-                    <AccordionTrigger className="text-left hover:no-underline text-sm sm:text-base">
-                      ¿Cómo puedo contactar al equipo de NMHN?
-                    </AccordionTrigger>
-                    <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                      Puedes contactarnos a través de{" "}
-                      <a href="mailto:info@netmarkethn.com" className="text-teal hover:underline">
-                        info@netmarkethn.com
-                      </a>
-                      {" "}o llamando al +504 9279-0292. También puedes completar el formulario de cotización en nuestra página web y nuestro equipo se pondrá en contacto contigo.
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
+                    </Accordion>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>
         </section>
 
         {/* Solicitar Cotización */}
-        <section id="cotizacion" className="w-full py-12 sm:py-16 md:py-20 lg:py-32 bg-gradient-to-br from-teal/5 via-background to-muted/20 relative">
+        <section id="cotizacion" className="w-full bg-background py-8 sm:py-10 md:py-12 lg:py-16 relative">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
             <div className="mx-auto max-w-4xl space-y-8 sm:space-y-12">
               <div className="text-center space-y-4 sm:space-y-6">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-teal/10 mb-4">
-                  <FileText className="w-8 h-8 text-teal" />
-                </div>
                 <h2 className="text-2xl font-bold tracking-tight text-balance sm:text-3xl md:text-4xl lg:text-5xl">
                   Solicita tu cotización
                 </h2>
@@ -864,7 +874,7 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <Card className="border-border shadow-lg">
+              <Card className="border-black shadow-lg">
                 <CardHeader className="px-4 sm:px-6 pt-6 sm:pt-8">
                   <CardTitle className="text-xl sm:text-2xl">Información del proyecto</CardTitle>
                   <CardDescription className="text-sm">
@@ -985,7 +995,16 @@ export default function HomePage() {
                       )}
                     </div>
 
-                    <Button type="submit" className="w-full bg-teal text-teal-foreground hover:bg-teal/90" size="lg">
+                    <Button
+                      type="submit"
+                      disabled={!isQuoteFormValid}
+                      className={`w-full text-teal-foreground transition-colors ${
+                        isQuoteFormValid
+                          ? "bg-teal hover:bg-teal/90"
+                          : "bg-muted text-muted-foreground cursor-not-allowed hover:bg-muted"
+                      }`}
+                      size="lg"
+                    >
                       Solicitar cotización
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
