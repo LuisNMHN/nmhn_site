@@ -33,13 +33,13 @@ export default function TerminosPage() {
                 <section className="space-y-3 sm:space-y-4">
                   <h2 className="text-xl sm:text-2xl font-bold">2. Servicios ofrecidos</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    NMHN es una empresa tecnológica especializada en:
+                    NMHN es una empresa de tecnología enfocada en:
                   </p>
                   <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
                     <li>Desarrollo de sitios web modernos y responsivos</li>
                     <li>Desarrollo de software personalizado y aplicaciones</li>
                     <li>Asesorías tecnológicas y consultoría</li>
-                    <li>Capacitación especializada en tecnologías modernas</li>
+                    <li>Capacitación en tecnologías modernas</li>
                     <li>Herramientas digitales y software listo para implementar</li>
                     <li>Plantillas avanzadas y personalizables</li>
                     <li>Licencias empresariales de software (próximamente)</li>
@@ -57,7 +57,7 @@ export default function TerminosPage() {
                   <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
                     <li><strong>Diagnóstico:</strong> Analizamos sus necesidades y objetivos</li>
                     <li><strong>Propuesta:</strong> Elaboramos una propuesta detallada con alcance, tiempos y presupuesto</li>
-                    <li><strong>Desarrollo:</strong> Implementamos la solución con metodologías ágiles</li>
+                    <li><strong>Desarrollo:</strong> Construimos la solución de forma organizada</li>
                     <li><strong>Entrega:</strong> Proyecto completamente funcional y documentado</li>
                     <li><strong>Soporte:</strong> Mantenimiento continuo y asistencia técnica</li>
                   </ul>

@@ -39,7 +39,7 @@ export default function DevolucionPage() {
                     <li>Desarrollo de software y aplicaciones a la medida</li>
                     <li>Desarrollo de sitios web personalizados</li>
                     <li>Asesorías tecnológicas</li>
-                    <li>Capacitación especializada</li>
+                    <li>Capacitación</li>
                     <li>Herramientas digitales y plantillas</li>
                   </ul>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
@@ -191,4 +191,5 @@ export default function DevolucionPage() {
     </div>
   )
 }
+
 

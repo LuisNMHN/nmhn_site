@@ -34,7 +34,7 @@ export default function FAQPage() {
                       ¿Qué es NMHN?
                     </AccordionTrigger>
                     <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                      NMHN es una empresa tecnológica hondureña que impulsa el desarrollo del mercado digital mediante herramientas y soluciones diseñadas para emprendedores, profesionales y negocios locales.
+                      NMHN es una empresa hondureña de tecnología que impulsa el desarrollo del mercado digital mediante herramientas diseñadas para emprendedores, profesionales y negocios locales.
                     </AccordionContent>
                   </AccordionItem>
 
@@ -43,7 +43,7 @@ export default function FAQPage() {
                       ¿En qué etapa se encuentra la plataforma?
                     </AccordionTrigger>
                     <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                      La plataforma está en constante desarrollo. Nuestro equipo trabaja de forma progresiva en la creación de herramientas digitales orientadas a fortalecer la presencia en línea y facilitar procesos relacionados con el ecosistema digital hondureño.
+                      La plataforma está en constante desarrollo. Nuestro equipo trabaja en la creación de herramientas para fortalecer la presencia en línea y facilitar procesos del ecosistema digital hondureño.
                     </AccordionContent>
                   </AccordionItem>
 
@@ -61,7 +61,7 @@ export default function FAQPage() {
                       ¿Qué tipo de herramientas ofrecerá NMHN?
                     </AccordionTrigger>
                     <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                      NMHN desarrollará herramientas digitales orientadas a apoyar la actividad económica moderna. Esto incluye soluciones que faciliten la visibilidad, la organización y el acceso a oportunidades dentro del mercado digital.
+                      NMHN desarrollará herramientas para apoyar la actividad económica moderna. Esto incluye opciones que faciliten la visibilidad, la organización y el acceso a oportunidades dentro del mercado digital.
                     </AccordionContent>
                   </AccordionItem>
 
@@ -70,7 +70,7 @@ export default function FAQPage() {
                       ¿NMHN es una entidad financiera?
                     </AccordionTrigger>
                     <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                      No. NMHN no es un banco, no ofrece servicios financieros, no realiza transferencias de dinero, no gestiona pagos ni opera como pasarela. Nuestro enfoque está en el desarrollo de tecnología y herramientas digitales.
+                      No. NMHN no es un banco, no ofrece servicios financieros, no realiza transferencias de dinero, no gestiona pagos ni opera como pasarela. Nuestro enfoque está en el desarrollo de tecnología.
                     </AccordionContent>
                   </AccordionItem>
 

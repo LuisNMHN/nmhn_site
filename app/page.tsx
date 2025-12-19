@@ -49,9 +49,7 @@ export default function HomePage() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false)
   const [currentCard, setCurrentCard] = useState(0)
   const [currentServiceCard, setCurrentServiceCard] = useState(0)
-  const [activeWorkflowStep, setActiveWorkflowStep] = useState(0)
-  const [workflowProgress, setWorkflowProgress] = useState(0) // 0-1 para el progreso entre pasos
-  const [isWorkflowPaused, setIsWorkflowPaused] = useState(false)
+  const [activeWorkflowStep, setActiveWorkflowStep] = useState<number | null>(null)
   const [quoteFormData, setQuoteFormData] = useState({
     nombre: "",
     email: "",
@@ -98,7 +96,7 @@ export default function HomePage() {
       iconColor: "text-white",
       bgColor: "bg-green-500/10",
       title: "Asesorías tecnológicas",
-      description: "Consultoría especializada para optimizar tu estrategia digital",
+      description: "Consultoría para mejorar tu estrategia digital",
       image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop",
       imageAlt: "Asesorías tecnológicas",
     },
@@ -106,10 +104,10 @@ export default function HomePage() {
       icon: GraduationCap,
       iconColor: "text-white",
       bgColor: "bg-orange-500/10",
-      title: "Capacitación especializada",
+      title: "Capacitación",
       description: "Programas de formación para tu equipo en tecnologías modernas",
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
-      imageAlt: "Capacitación especializada",
+      imageAlt: "Capacitación",
     },
     {
       icon: Wrench,
@@ -158,92 +156,6 @@ export default function HomePage() {
     return () => clearInterval(interval)
   }, [])
 
-  // Función de easing suave (ease-in-out-cubic)
-  const easeInOutCubic = (t: number): number => {
-    return t < 0.5
-      ? 4 * t * t * t
-      : 1 - Math.pow(-2 * t + 2, 3) / 2
-  }
-
-  // Auto-rotación del flujo "Cómo trabajamos" - cada card activa por 2.5 segundos
-  useEffect(() => {
-    const stepDuration = 2500 // 2.5 segundos por paso (aumentado para más tiempo en cada card)
-    const animationDuration = 2000 // 2 segundos para la transición entre pasos (más suave)
-    
-    let startTime: number | null = null
-    let pausedTime: number | null = null
-    let currentStep = activeWorkflowStep
-    let animationFrame: number
-
-    const animate = (timestamp: number) => {
-      if (isWorkflowPaused) {
-        // Si está pausado, guardar el tiempo de pausa y no avanzar
-        if (pausedTime === null && startTime !== null) {
-          pausedTime = timestamp
-        }
-        animationFrame = requestAnimationFrame(animate)
-        return
-      }
-
-      // Si se reanudó después de estar pausado, ajustar el tiempo de inicio
-      if (pausedTime !== null && startTime !== null) {
-        const pauseDuration = timestamp - pausedTime
-        startTime = startTime + pauseDuration
-        pausedTime = null
-      }
-
-      if (!startTime) startTime = timestamp
-      const elapsed = timestamp - startTime
-      
-      if (elapsed < stepDuration) {
-        // Durante el paso, el progreso se mantiene en 0 (en la card actual)
-        setActiveWorkflowStep(currentStep)
-        setWorkflowProgress(0)
-        animationFrame = requestAnimationFrame(animate)
-      } else if (elapsed < stepDuration + animationDuration) {
-        // Durante la transición, el progreso va de 0 a 1 con easing suave
-        const rawProgress = (elapsed - stepDuration) / animationDuration
-        const easedProgress = easeInOutCubic(Math.min(rawProgress, 1))
-        setActiveWorkflowStep(currentStep)
-        setWorkflowProgress(easedProgress)
-        animationFrame = requestAnimationFrame(animate)
-      } else {
-        // Transición completa, cambiar al siguiente paso
-        currentStep = (currentStep + 1) % 5
-        setActiveWorkflowStep(currentStep)
-        setWorkflowProgress(0)
-        startTime = timestamp
-        animationFrame = requestAnimationFrame(animate)
-      }
-    }
-
-    animationFrame = requestAnimationFrame(animate)
-
-    return () => {
-      if (animationFrame) {
-        cancelAnimationFrame(animationFrame)
-      }
-    }
-  }, [isWorkflowPaused, activeWorkflowStep])
-
-  // Función para parsear RGB string a valores numéricos
-  const parseRGB = (rgbString: string): [number, number, number] => {
-    const match = rgbString.match(/\d+/g)
-    if (match && match.length >= 3) {
-      return [parseInt(match[0]), parseInt(match[1]), parseInt(match[2])]
-    }
-    return [0, 0, 0]
-  }
-
-  // Función para interpolar entre dos colores RGB
-  const interpolateColor = (color1: string, color2: string, progress: number): string => {
-    const [r1, g1, b1] = parseRGB(color1)
-    const [r2, g2, b2] = parseRGB(color2)
-    const r = Math.round(r1 + (r2 - r1) * progress)
-    const g = Math.round(g1 + (g2 - g1) * progress)
-    const b = Math.round(b1 + (b2 - b1) * progress)
-    return `rgb(${r} ${g} ${b})`
-  }
 
   // Colores de los pasos
   const workflowColors = [
@@ -254,56 +166,21 @@ export default function HomePage() {
     "rgb(147 51 234)",    // purple - Soporte
   ]
 
-  // Calcular color actual basado en el progreso
+  // Obtener color actual del paso activo
   const getCurrentColor = () => {
-    const currentColor = workflowColors[activeWorkflowStep]
-    const nextStep = (activeWorkflowStep + 1) % 5
-    const nextColor = workflowColors[nextStep]
-    return interpolateColor(currentColor, nextColor, workflowProgress)
+    if (activeWorkflowStep === null) return workflowColors[0]
+    return workflowColors[activeWorkflowStep]
   }
 
-  // Calcular posición horizontal actual del círculo
+  // Obtener posición horizontal del círculo
   const getCirclePosition = () => {
-    const currentPos = (activeWorkflowStep * 20 + 10) // Posición del paso actual
-    const nextPos = (((activeWorkflowStep + 1) % 5) * 20 + 10) // Posición del siguiente paso
-    return currentPos + (nextPos - currentPos) * workflowProgress
+    if (activeWorkflowStep === null) return 10
+    return activeWorkflowStep * 20 + 10
   }
 
-  // Calcular posición vertical del círculo en zig zag
+  // Obtener posición vertical del círculo
   const getCircleVerticalPosition = () => {
-    const horizontalPos = getCirclePosition()
-    // Calcular qué card está más cerca
-    const cardPositions = [10, 30, 50, 70, 90] // Posiciones centradas de cada card
-    let nearestCardIndex = 0
-    let minDistance = Infinity
-    
-    cardPositions.forEach((pos, index) => {
-      const distance = Math.abs(horizontalPos - pos)
-      if (distance < minDistance) {
-        minDistance = distance
-        nearestCardIndex = index
-      }
-    })
-    
-    // Calcular la distancia desde el centro de la card más cercana
-    const distanceFromCard = Math.abs(horizontalPos - cardPositions[nearestCardIndex])
-    const cardWidth = 20 // Ancho aproximado de cada card en porcentaje
-    const halfCardWidth = cardWidth / 2
-    
-    // Si está cerca de una card (dentro de la mitad del ancho), subir (zig)
-    // Si está lejos (entre cards), bajar (zag)
-    if (distanceFromCard < halfCardWidth) {
-      // Zig: subir cuando está sobre una card - usar función seno para movimiento suave
-      const progress = 1 - (distanceFromCard / halfCardWidth)
-      // Usar función seno para un movimiento más suave y natural
-      const sineProgress = Math.sin(progress * Math.PI / 2)
-      return -50 * sineProgress // Subir hasta 50px sobre las cards
-    } else {
-      // Zag: bajar cuando está entre cards
-      const progress = Math.min((distanceFromCard - halfCardWidth) / halfCardWidth, 1)
-      const sineProgress = Math.sin(progress * Math.PI / 2)
-      return 20 * sineProgress // Bajar hasta 20px entre cards
-    }
+    return -50 // Posición fija sobre las cards
   }
 
   // Validación de email
@@ -438,8 +315,11 @@ export default function HomePage() {
 
       const result = await response.json()
 
-      if (!result.ok) {
-        throw new Error("Error al enviar la cotización")
+      if (!response.ok || !result.ok) {
+        // Por ahora mostrar modal de "en construcción" en lugar de error
+        console.warn("Servicio de correo no disponible, mostrando modal de construcción")
+        setIsConstructionModalOpen(true)
+        return
       }
 
       setIsQuoteModalOpen(true)
@@ -460,7 +340,8 @@ export default function HomePage() {
       })
     } catch (error) {
       console.error("Error al enviar la cotización:", error)
-      // En el futuro se puede mostrar un mensaje de error al usuario
+      // Mostrar modal de construcción en caso de error
+      setIsConstructionModalOpen(true)
     }
   }
 
@@ -483,7 +364,7 @@ export default function HomePage() {
               <div className="flex flex-col justify-center space-y-4 sm:space-y-6 lg:space-y-8 order-1">
                 <TypingHero />
                 <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed text-pretty animate-text-reveal animation-delay-400">
-                  En NETMARKETHN desarrollamos herramientas digitales orientadas a fortalecer la presencia en línea de emprendedores y negocios en Honduras. Creamos soluciones tecnológicas modernas, seguras y adaptadas al entorno digital local.
+                  En NETMARKETHN desarrollamos herramientas digitales para fortalecer la presencia en línea de emprendedores y negocios en Honduras. Creamos tecnología moderna, segura y adaptada al contexto local.
                 </p>
                 <div className="flex flex-col gap-3 sm:gap-4 sm:flex-row animate-slide-in-left animation-delay-600 pt-2">
                   <Button 
@@ -519,7 +400,7 @@ export default function HomePage() {
               <div className="text-center space-y-4 sm:space-y-6">
                 <h2 className="text-2xl font-bold tracking-tight text-balance sm:text-3xl md:text-4xl lg:text-5xl">Servicios</h2>
                 <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto px-4">
-                  Ofrecemos una amplia gama de servicios y productos digitales diseñados para impulsar tu presencia en línea y optimizar tus procesos empresariales.
+                  Ofrecemos servicios y productos digitales diseñados para impulsar tu presencia en línea y mejorar tus procesos de negocio.
                 </p>
               </div>
               <div className="relative max-w-2xl mx-auto">
@@ -634,7 +515,7 @@ export default function HomePage() {
                     {
                       icon: Search,
                       title: "Diagnóstico",
-                      description: "Analizamos tus necesidades y objetivos para entender completamente tu proyecto",
+                      description: "Conocemos tus necesidades y objetivos para entender tu proyecto",
                       color: "teal",
                       rgbColor: "rgb(20 184 166)",
                       delay: "0.1s",
@@ -643,7 +524,7 @@ export default function HomePage() {
                     {
                       icon: ClipboardList,
                       title: "Propuesta",
-                      description: "Elaboramos una propuesta detallada con alcance, tiempos y presupuesto",
+                      description: "Creamos una propuesta con alcance, tiempos y presupuesto",
                       color: "red-dark",
                       rgbColor: "rgb(153 27 27)",
                       delay: "0.2s",
@@ -652,7 +533,7 @@ export default function HomePage() {
                     {
                       icon: Code,
                       title: "Desarrollo",
-                      description: "Desarrollamos tu solución con metodologías ágiles y mejores prácticas",
+                      description: "Desarrollamos tu proyecto de forma flexible y organizada",
                       color: "gray-dark",
                       rgbColor: "rgb(55 65 81)",
                       delay: "0.3s",
@@ -661,7 +542,7 @@ export default function HomePage() {
                     {
                       icon: Package,
                       title: "Entrega",
-                      description: "Entregamos tu proyecto completamente funcional y documentado",
+                      description: "Entregamos tu proyecto funcional y documentado",
                       color: "green",
                       rgbColor: "rgb(34 197 94)",
                       delay: "0.4s",
@@ -670,7 +551,7 @@ export default function HomePage() {
                     {
                       icon: Headphones,
                       title: "Soporte",
-                      description: "Brindamos soporte continuo y mantenimiento para asegurar el éxito",
+                      description: "Ofrecemos soporte y mantenimiento para garantizar el éxito",
                       color: "purple",
                       rgbColor: "rgb(147 51 234)",
                       delay: "0.5s",
@@ -707,8 +588,8 @@ export default function HomePage() {
                           }}
                           data-hover-color={step.color}
                           data-step-index={index}
-                          onMouseEnter={() => setIsWorkflowPaused(true)}
-                          onMouseLeave={() => setIsWorkflowPaused(false)}
+                          onMouseEnter={() => setActiveWorkflowStep(index)}
+                          onMouseLeave={() => setActiveWorkflowStep(null)}
                         >
                           {/* Número de paso en esquina superior derecha */}
                           <div 
@@ -792,7 +673,7 @@ export default function HomePage() {
                       ¿Qué es NMHN?
                     </AccordionTrigger>
                     <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                      NMHN es una empresa tecnológica especializada en desarrollo de software, servicios web y soluciones digitales. Ofrecemos servicios de desarrollo web, desarrollo de software personalizado, asesorías tecnológicas, capacitación especializada, herramientas digitales y plantillas avanzadas para empresas y profesionales en Honduras.
+                      NMHN es una empresa de tecnología enfocada en desarrollo de software, servicios web y soluciones digitales. Ofrecemos desarrollo web, software personalizado, asesorías, capacitación, herramientas digitales y plantillas para empresas y profesionales en Honduras.
                     </AccordionContent>
                   </AccordionItem>
 
@@ -801,7 +682,7 @@ export default function HomePage() {
                       ¿Qué servicios ofrecen?
                     </AccordionTrigger>
                     <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                      Ofrecemos una amplia gama de servicios tecnológicos: desarrollo de sitios web modernos y responsivos, desarrollo de software personalizado para automatizar procesos, asesorías tecnológicas para optimizar estrategias digitales, programas de capacitación especializada, herramientas digitales listas para implementar, plantillas avanzadas personalizables y próximamente licencias empresariales.
+                      Ofrecemos desarrollo de sitios web modernos y adaptables, software personalizado para automatizar tareas, asesorías para mejorar tu estrategia digital, programas de capacitación, herramientas listas para usar, plantillas personalizables y próximamente licencias empresariales.
                     </AccordionContent>
                   </AccordionItem>
 
@@ -810,7 +691,7 @@ export default function HomePage() {
                       ¿Cómo funciona el proceso de trabajo?
                     </AccordionTrigger>
                     <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                      Nuestro proceso consta de 5 etapas: Diagnóstico (analizamos tus necesidades), Propuesta (elaboramos un plan detallado con alcance, tiempos y presupuesto), Desarrollo (implementamos la solución con metodologías ágiles), Entrega (proyecto funcional y documentado) y Soporte (mantenimiento continuo para asegurar el éxito).
+                      Nuestro proceso tiene 5 etapas: Diagnóstico (conocemos tus necesidades), Propuesta (creamos un plan con alcance, tiempos y presupuesto), Desarrollo (construimos tu proyecto de forma organizada), Entrega (proyecto funcional y documentado) y Soporte (mantenimiento continuo para garantizar el éxito).
                     </AccordionContent>
                   </AccordionItem>
 
@@ -819,7 +700,7 @@ export default function HomePage() {
                       ¿A quién está dirigido sus servicios?
                     </AccordionTrigger>
                     <AccordionContent className="text-sm sm:text-base text-muted-foreground">
-                      Nuestros servicios están dirigidos a emprendedores, profesionales, pequeñas y medianas empresas, organizaciones y cualquier persona o negocio que busque fortalecer su presencia digital, automatizar procesos o implementar soluciones tecnológicas modernas en Honduras.
+                      Trabajamos con emprendedores, profesionales, pequeñas y medianas empresas, organizaciones y cualquier persona o negocio que busque fortalecer su presencia digital, automatizar tareas o adoptar tecnología moderna en Honduras.
                     </AccordionContent>
                   </AccordionItem>
 

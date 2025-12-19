@@ -24,7 +24,6 @@ import {
 
 export function PlatformAnimation() {
   const [hovered, setHovered] = useState<string | null>(null)
-  const [autoHoverIndex, setAutoHoverIndex] = useState(0)
   const [particles, setParticles] = useState<Array<{ left: string; top: string; delay: string; duration: string }>>([])
 
   const techIcons = [
@@ -52,27 +51,6 @@ export function PlatformAnimation() {
       duration: `${2 + Math.random() * 2}s`,
     }))
     setParticles(generatedParticles)
-  }, [])
-
-  // Auto-hover rotativo para todos los iconos
-  useEffect(() => {
-    const allIcons = [
-      ...techIcons.map((_, i) => `tech-${i}`),
-      ...commerceIcons.map((_, i) => `commerce-${i}`),
-    ]
-
-    const interval = setInterval(() => {
-      setAutoHoverIndex((prev) => {
-        const nextIndex = (prev + 1) % allIcons.length
-        setHovered(allIcons[nextIndex])
-        return nextIndex
-      })
-    }, 2000) // Cambia cada 2 segundos
-
-    // Inicializar con el primer icono
-    setHovered(allIcons[0])
-
-    return () => clearInterval(interval)
   }, [])
 
   return (
@@ -133,13 +111,7 @@ export function PlatformAnimation() {
               animationDelay: item.delay,
             }}
             onMouseEnter={() => setHovered(`tech-${index}`)}
-            onMouseLeave={() => {
-              const allIcons = [
-                ...techIcons.map((_, i) => `tech-${i}`),
-                ...commerceIcons.map((_, i) => `commerce-${i}`),
-              ]
-              setHovered(allIcons[autoHoverIndex])
-            }}
+            onMouseLeave={() => setHovered(null)}
           >
             <div
               className={`relative transition-all duration-300 ${
@@ -184,13 +156,7 @@ export function PlatformAnimation() {
               animationDelay: item.delay,
             }}
             onMouseEnter={() => setHovered(`commerce-${index}`)}
-            onMouseLeave={() => {
-              const allIcons = [
-                ...techIcons.map((_, i) => `tech-${i}`),
-                ...commerceIcons.map((_, i) => `commerce-${i}`),
-              ]
-              setHovered(allIcons[autoHoverIndex])
-            }}
+            onMouseLeave={() => setHovered(null)}
           >
             <div
               className={`relative transition-all duration-300 ${

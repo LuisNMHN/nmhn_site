@@ -93,7 +93,7 @@ export default function MediosPagoPage() {
                 <section className="space-y-3 sm:space-y-4">
                   <h2 className="text-xl sm:text-2xl font-bold">3. Estructura de pagos para proyectos</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Para proyectos de desarrollo, los pagos generalmente se estructuran de la siguiente manera:
+                    Para proyectos de desarrollo, los pagos generalmente se dividen así:
                   </p>
                   <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
                     <li><strong>Pago inicial (30-50%):</strong> Al aceptar la propuesta y antes de iniciar el desarrollo</li>
@@ -126,7 +126,7 @@ export default function MediosPagoPage() {
                 <section className="space-y-3 sm:space-y-4">
                   <h2 className="text-xl sm:text-2xl font-bold">5. Seguridad de los pagos</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Implementamos medidas de seguridad para proteger la información de pago:
+                    Aplicamos medidas de seguridad para proteger la información de pago:
                   </p>
                   <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
                     <li>Cifrado SSL/TLS para todas las transacciones en línea</li>
@@ -196,7 +196,7 @@ export default function MediosPagoPage() {
                     Todos los precios están sujetos a impuestos aplicables según la legislación hondureña. Los impuestos se incluirán claramente en las facturas y propuestas comerciales.
                   </p>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Para clientes internacionales, pueden aplicarse regulaciones fiscales específicas según su jurisdicción.
+                    Para clientes internacionales, pueden aplicarse regulaciones fiscales según su jurisdicción.
                   </p>
                 </section>
 
@@ -232,4 +232,5 @@ export default function MediosPagoPage() {
     </div>
   )
 }
+
 

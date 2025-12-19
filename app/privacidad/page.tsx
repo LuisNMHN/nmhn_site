@@ -26,10 +26,10 @@ export default function PrivacidadPage() {
                 <section className="space-y-3 sm:space-y-4">
                   <h2 className="text-xl sm:text-2xl font-bold">1. Introducción</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    En NMHN respetamos la privacidad de nuestros clientes y usuarios. Esta política explica cómo recopilamos, utilizamos, almacenamos y protegemos la información personal relacionada con nuestros servicios de desarrollo de software, servicios web y soluciones digitales.
+                    En NMHN respetamos la privacidad de nuestros clientes y usuarios. Esta política explica cómo recopilamos, utilizamos, almacenamos y protegemos la información personal relacionada con nuestros servicios de desarrollo de software y servicios web.
                   </p>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    NMHN es una empresa tecnológica especializada en desarrollo de software y servicios digitales. Toda la información recopilada se utiliza únicamente con fines operativos, administrativos y de mejora de nuestros servicios.
+                    NMHN es una empresa de tecnología enfocada en desarrollo de software y servicios digitales. Toda la información recopilada se utiliza únicamente con fines operativos, administrativos y de mejora de nuestros servicios.
                   </p>
                 </section>
 
@@ -107,7 +107,7 @@ export default function PrivacidadPage() {
                     <div>
                       <h3 className="text-base sm:text-lg font-semibold mb-2">a) Proveedores de servicios</h3>
                       <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-2">
-                        Utilizamos empresas especializadas en:
+                        Trabajamos con empresas en:
                       </p>
                       <ul className="list-disc pl-5 sm:pl-6 space-y-1 text-sm sm:text-base text-muted-foreground">
                         <li>Infraestructura en la nube y hosting</li>
@@ -140,7 +140,7 @@ export default function PrivacidadPage() {
                 <section className="space-y-3 sm:space-y-4">
                   <h2 className="text-xl sm:text-2xl font-bold">5. Seguridad de los datos</h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Implementamos medidas técnicas y organizativas para proteger la información:
+                    Aplicamos medidas técnicas y organizativas para proteger la información:
                   </p>
                   <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground">
                     <li>Cifrado de datos en tránsito y en reposo</li>
@@ -152,7 +152,7 @@ export default function PrivacidadPage() {
                     <li>Capacitación del personal en seguridad de datos</li>
                   </ul>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    Aunque implementamos medidas sólidas, ninguna empresa puede garantizar seguridad absoluta. Le recomendamos mantener sus credenciales seguras y notificarnos inmediatamente cualquier actividad sospechosa.
+                    Aunque aplicamos medidas de seguridad, ninguna empresa puede garantizar protección absoluta. Le recomendamos mantener sus credenciales seguras y notificarnos inmediatamente cualquier actividad sospechosa.
                   </p>
                 </section>
 
@@ -225,7 +225,7 @@ export default function PrivacidadPage() {
                     Parte del procesamiento de datos puede realizarse fuera de Honduras, en países con infraestructura tecnológica avanzada.
                   </p>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    En todos los casos, implementamos medidas adecuadas para garantizar un nivel de protección equivalente al requerido por las normativas de privacidad aplicables.
+                    En todos los casos, aplicamos medidas adecuadas para garantizar un nivel de protección según las normativas de privacidad aplicables.
                   </p>
                 </section>
 
